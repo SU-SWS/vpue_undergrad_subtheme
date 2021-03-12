@@ -1,2 +1,2 @@
 // Theme code.
-import './stanford_starter.behaviors.js';
+import './vpue_undergrad_subtheme.behaviors.js';
