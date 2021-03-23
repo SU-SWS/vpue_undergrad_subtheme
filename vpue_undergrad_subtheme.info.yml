@@ -1,12 +1,12 @@
-name: Stanford Starter
+name: Undergrad
 type: theme
-description: 'Stanford Starter Theme.'
+description: 'Stanford VPUE Undergrad Theme.'
 package: Stanford
 version: 8.x-1.0-dev
 core: 8.x
 base theme: stanford_basic
 libraries:
-  - stanford_starter/allpages
+  - vpue_undergrad_subtheme/allpages
 
 regions:
   page_top: 'Page top'
