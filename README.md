@@ -1,4 +1,4 @@
-# [vpue_undergrad_subtheme](https://github.com/SU-SWS/vpue_undergrad_subtheme)
+# [VPUE Undergrad](https://github.com/SU-SWS/vpue_undergrad_subtheme)
 ##### Version: 8.x-1.0-dev
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
