@@ -1,1 +1,14 @@
-.stanford-starter:after{content:"Stanford Starter"}
+/* don't forget to include decanter icon color overrides too;
+  ** if you override a link color, you must also override the :after psuedo element
+  ** so decanter icons correspond to the link color.
+  */
+/* don't forget to include decanter icon color overrides too;
+  ** if you override a link color, you must also override the :after psuedo element
+  ** so decanter icons correspond to the link color.
+  */
+/* Subtheme Specific colors, Stanford/Decanter colors are not defined here */
+.stanford-starter::after {
+  content: 'Stanford Starter'; }
+
+
+/*# sourceMappingURL=base.css.map*/
