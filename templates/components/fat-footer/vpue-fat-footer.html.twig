@@ -1,0 +1,155 @@
+{# Glue code for Decanter's component #}
+{% import "@jumpstart_ui/macros/field-links-to-list.twig" as linklist %}
+{% import "@jumpstart_ui/macros/field-links-to-social-list.twig" as sociallist %}
+
+{%- set weblogin_text = weblogin_text|render_clean -%}
+{%- if weblogin_text is empty -%}
+  {%- set weblogin_url = '' -%}
+{%- endif -%}
+{%- set lockup_title = lockup_title|render_clean -%}
+{%- set signup_form_method = signup_form_method|render_clean -%}
+{%- set signup_form_action = signup_form_action|render_clean -%}
+{%- set signup_form_field_submit_value = signup_form_field_submit_value|render_clean -%}
+{%- set action_links = linklist.create_list(action_links) -%}
+{%- set social_links = sociallist.create_list(social_links) -%}
+{#{%- set primary_links = linklist.create_list(primary_links) -%}#}
+{#{%- set secondary_links = linklist.create_list(secondary_links) -%}#}
+{#{%- set primary_links_header = primary_links_header|render_clean -%}#}
+{#{%- set secondary_links_header = secondary_links_header|render_clean -%}#}
+
+{% if attributes is not empty %}
+  {% set attributes = attributes.removeClass('su-local-footer') %}
+{% else %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% if modifier_class is not empty %}
+  {% set attributes = attributes.addClass(modifier_class) %}
+{% endif %}
+
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
+{%- extends "@decanter/components/local-footer/local-footer.twig" -%}
+
+{% block contentcell1 %}
+  {#
+    The address is optional so don't put non-address
+    content in it.
+    Use the `cell1` variable instead.
+  #}
+{#  <div class="su-fat-footer__logo-container"><a {{ attributes }} class="su-fat-footer__logo" href="https://stanford.edu"><img src="{{ base_path ~ directory }}/src/assets/svg/saa-logo-color.svg" alt="Stanford Alumni" class="su-fat-footer__logo" /></a></div>#}
+  <div class="su-fat-footer__logo-container">
+    <img src="{{ base_path ~ directory }}logo.svg" alt="Stanford" class="su-fat-footer__logo" />
+    <span class="organization">Vice Provost for Undergraduate Education</span><br>
+  </div>
+  <div class="su-fat-footer__description">
+    <span>Stanford Undergrad is your guide to undergraduate academics and opportunities found within the Vice Provost for Undergraduate Education.</span>
+  </div>
+    <address class="su-local-footer__address">
+      <p class="address" translate="no">
+        <span class="address-line1">Sweet Hall</span><br>
+        <span class="address-line2">590 Escondido Mall</span><br>
+        <span class="locality">Stanford</span>, <span class="administrative-area">CA</span> <span class="postal-code">94305</span><br>
+        <span><a class="map-link su-link--external" href="https://www.google.com/maps/place/Sweet+Hall+(AIR),+590+Escondido+Mall,+Stanford,+CA+94305/@37.425208,-122.166616,16z/data=!4m5!3m4!1s0x808fbad6e630d36f:0x217fdab2330861cf!8m2!3d37.4252082!4d-122.1666157?hl=en-US">map</a></span><br>
+    </address>
+  {# Stylized links. See local-footer.json for structure for macro. #}
+    <ul class="su-local-footer__action-links">
+      <li><a href="http://giving.stanford.edu/">Give to Stanford</a></li>
+    </ul>
+
+  {# Contact section. #}
+  <div class="su-fat-footer__contact">
+    <span>Need help?</span><br>
+    <span>vpue@stanford.edu</span><br>
+    <span>(650)724-4463</span><br>
+  </div>
+  {# Stylized links. See local-footer.json for structure for macro. #}
+  <ul class="su-local-footer__social-links">
+    <span>Connect with us!</span><br>
+    <li>
+      <a href="https://twitter.com/stanfordalumni" class="su-local-footer__social-twitter">
+        <i aria-hidden="true"></i>
+        <span>Twitter</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/stanfordalumni" class="su-local-footer__social-facebook">
+        <i aria-hidden="true"></i>
+        <span>Stanford Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/stanfordalumni" class="su-local-footer__social-instagram">
+        <i aria-hidden="true"></i>
+        <span>Stanford Instagram</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/user/StanfordAlumni/" class="su-local-footer__social-youtube">
+        <i aria-hidden="true"></i>
+        <span>Youtube</span>
+      </a>
+    </li>
+    <li>
+      <a href="internal:/interior-page" class="su-local-footer__social-internal:">
+        <i aria-hidden="true"></i>
+        <span>local link</span>
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block contentcell2 %}
+  {# Link SEction 1 - top left links. #}
+  <nav class="vpue-local-footer__links-section vpue-local-footer__links-section-1" aria-label="vpue footer section 1">
+    <ul class="vpue-local-footer__links-column-1">
+      <li><a href="#">Advising & Academic Planning</a></li>
+      <li><a href="#">Research & Independent Projects</a></li>
+      <li><a href="#">Tutoring & Support</a></li>
+      <li><a href="#">Faculty / Staff</a></li>
+    </ul>
+  </nav>
+  {# Link SEction 1 - top left links. #}
+  <nav class="vpue-local-footer__links-section vpue-local-footer__links-section-2" aria-label="vpue footer section 2">
+    <h2 class="su-local-footer__list-heading">VPUE Programs</h2>
+    <ul class="vpue-local-footer__links-column-2">
+      <li><a href="#">Arts Intensive</a></li>
+      <li><a href="#">Bing Honors College</a></li>
+      <li><a href="#">Bing Overseas Studies Programs</a></li>
+      <li><a href="#">Cardinal Service</a></li>
+      <li><a href="#">Civic, Liberal, and Global Education</a></li>
+      <li><a href="#">Education as Self-Fashioning</a></li>
+      <li><a href="#">Frosh 101 / Transfer 101</a></li>
+      <li><a href="#">Haas Center for Public Service</a></li>
+      <li><a href="#">Introductory Studies</a></li>
+      <li><a href="#">ITALIC: Immersion in the Arts</a></li>
+      <li><a href="#">Leland Scholars</a></li>
+      <li><a href="#">Oral Communication Program</a></li>
+      <li><a href="#">Program in Writing and Rhetoric</a></li>
+      <li><a href="#">Sophomore College</a></li>
+      <li><a href="#">Sophomore Wayfinders</a></li>
+      <li><a href="#">Structured Liberal Education</a></li>
+      <li><a href="#">Stanford in New York</a></li>
+      <li><a href="#">Summer Bridge Programs</a></li>
+      <li><a href="#">Ways of Thinking / Ways of Doing</a></li>
+    </ul>
+  </nav>
+  {# Link SEction 1 - top left links. #}
+  <nav class="vpue-local-footer__links-section vpue-local-footer__links-section-3" aria-label="vpue footer section 3">
+    <h2 class="su-local-footer__list-heading">VPUE Units</h2>
+    <ul class="vpue-local-footer__links-column-2">
+      <li><a href="#">Academic Advising</a></li>
+      <li><a href="#">Bing Overseas Studies Programs</a></li>
+      <li><a href="#">Center for Teaching and Learning</a></li>
+      <li><a href="#">Haas Center for Public Service</a></li>
+      <li><a href="#">Program in Writing and Rhetoric</a></li>
+      <li><a href="#">Stanford Introductory Studies</a></li>
+      <li><a href="#">Vice Provost’s Office</a></li>
+    </ul>
+  </nav>
+
+{% endblock %}
+
+{% block contentcell3 %}
+{% endblock %}
