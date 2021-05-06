@@ -2,43 +2,8 @@
 {% import "@jumpstart_ui/macros/field-links-to-list.twig" as linklist %}
 {% import "@jumpstart_ui/macros/field-links-to-social-list.twig" as sociallist %}
 
-{%- set weblogin_text = weblogin_text|render_clean -%}
-{%- if weblogin_text is empty -%}
-  {%- set weblogin_url = '' -%}
-{%- endif -%}
-{%- set lockup_title = lockup_title|render_clean -%}
-{%- set signup_form_method = signup_form_method|render_clean -%}
-{%- set signup_form_action = signup_form_action|render_clean -%}
-{%- set signup_form_field_submit_value = signup_form_field_submit_value|render_clean -%}
-{%- set action_links = linklist.create_list(action_links) -%}
-{%- set social_links = sociallist.create_list(social_links) -%}
-{#{%- set primary_links = linklist.create_list(primary_links) -%}#}
-{#{%- set secondary_links = linklist.create_list(secondary_links) -%}#}
-{#{%- set primary_links_header = primary_links_header|render_clean -%}#}
-{#{%- set secondary_links_header = secondary_links_header|render_clean -%}#}
 
-{% if attributes is not empty %}
-  {% set attributes = attributes.removeClass('su-local-footer') %}
-{% else %}
-  {% set attributes = create_attribute() %}
-{% endif %}
-
-{% if modifier_class is not empty %}
-  {% set attributes = attributes.addClass(modifier_class) %}
-{% endif %}
-
-{% set modifier_class = attributes.class %}
-{% set attributes = attributes|without('class') %}
-
-{%- extends "@decanter/components/local-footer/local-footer.twig" -%}
-
-{% block contentcell1 %}
-  {#
-    The address is optional so don't put non-address
-    content in it.
-    Use the `cell1` variable instead.
-  #}
-{#  <div class="su-fat-footer__logo-container"><a {{ attributes }} class="su-fat-footer__logo" href="https://stanford.edu"><img src="{{ base_path ~ directory }}/src/assets/svg/saa-logo-color.svg" alt="Stanford Alumni" class="su-fat-footer__logo" /></a></div>#}
+<div class="vpue-fat-footer su-local-footer">
   <div class="su-fat-footer__logo-container">
     <img src="{{ base_path ~ directory }}logo.svg" alt="Stanford" class="su-fat-footer__logo" />
     <span class="su-fat-footer__organization">Vice Provost for Undergraduate Education</span><br>
@@ -98,10 +63,8 @@
       </a>
     </li>
   </ul>
-{% endblock %}
 
-{% block contentcell2 %}
-  {# Link SEction 1 - top left links. #}
+  {# Link Section 1 - top left links. #}
   <nav class="vpue-local-footer__links-section vpue-local-footer__links-section-1" aria-label="vpue footer section 1">
     <ul class="vpue-local-footer__links-column-1">
       <li><a href="#">Advising & Academic Planning</a></li>
@@ -149,7 +112,4 @@
     </ul>
   </nav>
 
-{% endblock %}
-
-{% block contentcell3 %}
-{% endblock %}
+</div>
