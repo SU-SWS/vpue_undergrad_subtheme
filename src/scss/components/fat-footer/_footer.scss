@@ -1,6 +1,27 @@
 @charset "UTF-8";
 
-// Footer Layout
-.su-local-footer {
-    background-color: aquamarine; // for testing purposes
+/* Footer Layout */
+.vpue-fat-footer {
+    color: #fff;
+    background: linear-gradient(87.98deg, #000000 -13.4%, #030002 15.48%, #0B000A 32.89%, #190017 47.27%, #2E0029 60%, #480041 71.51%, #620059 80.58%);
+
+    .vpue-lockup {
+        width: 100%;
+    }
+    .vpue-fat-footer__columns {
+
+        // @include modular-spacing('padding-top', 4);
+        grid-template-areas: "A B";
+    
+        @include grid-media-min('md') { // 1200px
+          -ms-grid-columns: 3fr 5fr;
+          grid-template-columns: 3fr 5fr;
+          grid-column-gap: 60px;
+        }
+        @include grid-media-min('xl') { // 1200px
+          -ms-grid-columns: 3fr 6fr;
+          grid-template-columns: 3fr 6fr;
+          grid-column-gap: 90px;
+        }
+    }
 }
