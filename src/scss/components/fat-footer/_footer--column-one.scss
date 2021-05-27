@@ -2,15 +2,20 @@
 
 /* First Column Styles */
 .vpue-fat-footer {
-    .vpue-lockup__wordmark {
+
+    &__lockup-wordmark {
         color: #fff;
     }
 
-    .vpue-lockup__line1 {
+    &__lockup-line1 {
         color: #fff;
     }
 
-    .vpue-lockup__line5 {
+    &__lockup-line5 {
         color: #fff;
+    }
+
+    &__contact {
+        padding-bottom: 3rem;
     }
 }
