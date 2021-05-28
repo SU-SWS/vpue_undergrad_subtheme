@@ -18,20 +18,29 @@
         width: 100%;
         @include modular-spacing('padding-bottom', 2);
 
+        .su-lockup__cell1 {
+            border-right: 1px solid $su-color-white;
+        }
+
         .su-lockup__cell2 {
-            border-left: 1px solid #fff;
+            border-left: 1px solid $su-color-white;
         }
 
         .vpue-fat-footer__lockup-wordmark {
             color: #fff;
+            // font-size: 3.9rem;
         }
     
         .vpue-fat-footer__lockup-line1 {
             color: #fff;
+            // font-size: 3.3rem;
+            font-family: sans-serif;
+
         }
     
         .vpue-fat-footer__lockup-line5 {
             color: #fff;
+            font-size: 1.9rem;
         }
     }
     
