@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+html {
+  @include vpue-font--lora-base;
+  font-size: $su-root-font-size;
+}
+
+// overriding fonts from Stanford Basic
+.su-button,
+.su-button--big,
+.su-button--big.su-link,
+.su-button--secondary,
+.su-button--secondary.su-link,
+.su-button.su-link,
+.su-cta .su-cta__button,
+.su-local-footer__header
+.su-link--internal,
+[type="button"],
+[type="image"],
+[type="reset"],
+[type="submit"],
+button,
+.su-multi-menu,
+.su-masthead .su-site-search__input {
+  @include vpue-font--lora-base;
+}
+
+body {
+  @include modular-typography-base;
+  @include vpue-font--lora-base;
+  color: $su-color-black;
+}
+
+// Do NOT override the fonts in the global footer
+.su-global-footer {
+  @include sans;
+}
+
+p {
+  line-height: $su-base-line-height;
+  @include margin(0 null 1em null);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+*[class^="su-type"] {
+  @include types;
+}
+
+h1,
+.su-type-a {
+  @include type-a;
+  // Note that h1 is overridden below:
+}
+
+h2,
+.su-type-b {
+  @include type-b;
+}
+
+h3,
+.su-type-c {
+  @include type-c;
+}
+
+h4,
+.su-type-d {
+  @include type-d;
+}
+
+h5,
+.su-type-e {
+  @include type-e;
+}
+
+h6,
+.su-type-f {
+  @include type-f;
+}
+
+// VPUE specifics
+h1,
+h2,
+h3,
+h4,
+h5,
+su-font-splash,
+p.su-callout-text {
+  @include vpue-font--lora-base;
+}
+
+// check specifics
+.su-drop-cap::first-letter {
+  @include vpue-font--lora-base;
+}
+
+// overridding decanter and base specific source sans declaration
+.su-card .su-card__contents {
+  @include vpue-font--lora-base;
+}

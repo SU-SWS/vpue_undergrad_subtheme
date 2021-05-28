@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+$vpue-font--lora: lora;
+
+@mixin vpue-font--lora-base {
+  font-family: $vpue-font--lora;
+}
