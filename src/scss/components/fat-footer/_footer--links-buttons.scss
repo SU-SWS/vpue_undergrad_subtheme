@@ -4,6 +4,8 @@
     .vpue-fat-footer__map-link {
         color: #fff;
         text-decoration: none;
+        font-size: 1.8rem;
+        font-weight: bold;
 
         
         &:hover,
@@ -15,6 +17,10 @@
         &::after {
             display: none;
         }
+    }
+
+    .vpue-fat-footer__list-heading-column1b {
+        @include modular-spacing('padding-top', 4);
     }
     
     // Social link styles
@@ -35,6 +41,7 @@
     .vpue-fat-footer__action-links {
         a {
             color: #fff;
+            font-size: 1.8rem;
 
             &:hover,
             &:focus {
@@ -66,8 +73,8 @@
         }
     }
 
-    &__list-heading {
-        font-family: serif;
-        font-size: 3rem;
+    .vpue-fat-footer__list-heading {
+        padding-bottom: 0;
+        font-size: 2.4rem;
     }
 }

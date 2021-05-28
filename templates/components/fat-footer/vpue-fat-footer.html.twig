@@ -5,7 +5,7 @@
 
 <div class="vpue-fat-footer su-local-footer">
   <div class="vpue-gradient-divider"></div>
-  <div class="su-local-footer__header">
+  <div class="su-local-footer__header vpue-fat-footer__header">
     <div class="vpue-fat-footer__logo-container">
       <img src="{{ base_path ~ directory }}/dist/assets/svg/vpue-logo.svg" alt="Stanford VPUE" class="vpue-fat-footer__logo" />
     </div>
@@ -39,9 +39,9 @@
         </div>
       </div>
       <div class="vpue-fat-footer__description">
-        <span>Stanford Undergrad is your guide to undergraduate academics and opportunities found within the Vice Provost for Undergraduate Education.</span>
+        <p>Stanford Undergrad is your guide to undergraduate academics and opportunities found within the Vice Provost for Undergraduate Education.</p>
       </div>
-      <address class="su-local-footer__address">
+      <address class="vpue-fat-footer__address su-local-footer__address">
         <p class="address" translate="no">
           <span class="address-line1">Sweet Hall</span><br>
           <span class="address-line2">590 Escondido Mall</span><br>
@@ -55,8 +55,8 @@
     
       {# Contact section. #}
       <div class="vpue-fat-footer__contact">
-        <span>Need help?</span><br>
-        <span>vpue@stanford.edu</span><br>
+        <span class="contact-line1">Need help?</span><br>
+        <span class="contact-email">vpue@stanford.edu</span><br>
         <span>(650)724-4463</span><br>
       </div>
       {# Stylized links. See local-footer.json for structure for macro. #}
@@ -98,14 +98,15 @@
     <div class="su-local-footer__cell2 vpue-fat-footer__cell2">
       {# Link Section 1 - top left links. #}
       <nav class="vpue-fat-footer__links-section vpue-fat-footer__links-section-1" aria-label="vpue footer section 1">
-        <ul class="vpue-fat-footer__links-column-1">
+        <ul class="vpue-fat-footer__links-column-1a">
           <li><a href="#">Advising & Academic Planning</a></li>
           <li><a href="#">Research & Independent Projects</a></li>
           <li><a href="#">Tutoring & Support</a></li>
           <li><a href="#">Faculty / Staff</a></li>
         </ul>
-        {# <h2 class="su-local-footer__list-heading">VPUE Units</h2>
-        <ul class="vpue-fat-footer__links-column-2">
+        <br>
+        <h2 class="su-local-footer__list-heading vpue-fat-footer__list-heading vpue-fat-footer__list-heading-column1b">VPUE Units</h2>
+        <ul class="vpue-fat-footer__links-column-1b">
           <li><a href="#">Academic Advising</a></li>
           <li><a href="#">Bing Overseas Studies Programs</a></li>
           <li><a href="#">Center for Teaching and Learning</a></li>
@@ -113,10 +114,10 @@
           <li><a href="#">Program in Writing and Rhetoric</a></li>
           <li><a href="#">Stanford Introductory Studies</a></li>
           <li><a href="#">Vice Provost’s Office</a></li>
-        </ul> #}
+        </ul>
       </nav>
       {# Link SEction 1 - top left links. #}
-      <nav class="vpue-fat-footer__links-section vpue-fat-footer__links-section-2" aria-label="vpue footer section 2">
+      {# <nav class="vpue-fat-footer__links-section vpue-fat-footer__links-section-2" aria-label="vpue footer section 2">
         <h2 class="su-local-footer__list-heading vpue-fat-footer__list-heading">VPUE Units</h2>
         <ul class="vpue-fat-footer__links-column-2">
           <li><a href="#">Academic Advising</a></li>
@@ -127,7 +128,7 @@
           <li><a href="#">Stanford Introductory Studies</a></li>
           <li><a href="#">Vice Provost’s Office</a></li>
         </ul>
-      </nav>
+      </nav> #}
       {# Link SEction 1 - top left links. #}
       <nav class="vpue-fat-footer__links-section vpue-fat-footer__links-section-3" aria-label="vpue footer section 3">
         <h2 class="su-local-footer__list-heading vpue-fat-footer__list-heading">VPUE Programs</h2>
@@ -140,7 +141,7 @@
           <li><a href="#">Education as Self-Fashioning</a></li>
           <li><a href="#">Frosh 101 / Transfer 101</a></li>
           <li><a href="#">Haas Center for Public Service</a></li>
-          {# <li><a href="#">Introductory Studies</a></li>
+          <li><a href="#">Introductory Studies</a></li>
           <li><a href="#">ITALIC: Immersion in the Arts</a></li>
           <li><a href="#">Leland Scholars</a></li>
           <li><a href="#">Oral Communication Program</a></li>
@@ -150,7 +151,7 @@
           <li><a href="#">Structured Liberal Education</a></li>
           <li><a href="#">Stanford in New York</a></li>
           <li><a href="#">Summer Bridge Programs</a></li>
-          <li><a href="#">Ways of Thinking / Ways of Doing</a></li> #}
+          <li><a href="#">Ways of Thinking / Ways of Doing</a></li>
         </ul>
       </nav>
     </div>
