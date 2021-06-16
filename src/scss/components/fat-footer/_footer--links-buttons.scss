@@ -2,7 +2,7 @@
 
 .vpue-fat-footer {
   .vpue-fat-footer__map-link {
-    color: #fff;
+    color: $su-color-white;
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
@@ -11,7 +11,7 @@
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: #F4795B;
+      color: $vpue-color-orange;
     }
 
     &::after {
@@ -58,7 +58,7 @@
   nav {
     // all regular navigation links
     a {
-      color: #fff;
+      color: $su-color-white;
       text-decoration: none;
 
       &:hover,
