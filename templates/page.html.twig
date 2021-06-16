@@ -1,0 +1,17 @@
+{#
+/**
+ * Page.html.twig from stanford_basic.
+ */
+#}
+{%- extends "@stanford_basic/page.html.twig" -%}
+
+{# Override the footer #}
+{%- block block_footer -%}
+  <footer id="footer">
+    {{ page.footer }}
+
+    {%- include "@vpue_undergrad_subtheme/components/fat-footer/vpue-fat-footer.html.twig" -%}
+    {%- include "@basic-dist/decanter/components/global-footer/global-footer.twig" -%}
+
+  </footer>
+{%- endblock -%}

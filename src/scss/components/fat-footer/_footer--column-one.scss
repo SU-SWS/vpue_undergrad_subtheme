@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* First Column Styles */
+.vpue-fat-footer {
+  .vpue-fat-footer__logo {
+    @include modular-spacing('padding-top', 4);
+    @include modular-spacing('padding-left', 4);
+  }
+
+  .vpue-fat-footer__address {
+    @include modular-spacing('padding-bottom', 2);
+    font-size: 1.8rem;
+
+    .address {
+      margin-bottom: 0; // to create consistent spacing added around the section
+    }
+  }
+
+  .vpue-fat-footer__contact {
+    @include modular-spacing('padding-bottom', 2);
+
+    .contact-line1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-email {
+      font-weight: bold;
+    }
+  }
+
+  .vpue-fat-footer__social-links {
+    padding-left: 2px; // needed for tabbing experience
+  }
+}

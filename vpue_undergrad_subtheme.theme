@@ -19,6 +19,7 @@ function vpue_undergrad_subtheme_theme_suggestions_block_alter(array &$suggestio
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+<<<<<<< HEAD
 
 
 /**
@@ -131,3 +132,5 @@ function vpue_undergrad_preprocess_banner(&$variables) {
   }
 }
 
+=======
+>>>>>>> 1.x
