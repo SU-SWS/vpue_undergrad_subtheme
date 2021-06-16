@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// .su-multi-menu {
+//     @include grid-media-min('lg') {
+//         > .su-multi-menu__menu > .su-multi-menu__item {
+//           .su-multi-menu__link {
+//             color: $su-color-black;
+    
+//             &:hover,
+//             &:focus {
+//                 .su-multi-menu>.su-multi-menu__menu>.su-multi-menu__item .su-multi-menu__link:focus,.su-multi-menu>.su-multi-menu__menu>.su-multi-menu__item .su-multi-menu__link:hover {
+//                     color: #8c1515;
+//                     background: linear-gradient(90deg, #620059 0%, #640156 17.75%, #6A044B 32.65%, #750A3A 46.52%, #841122 59.69%, #8C1515 65.19%, #B83A4B 99.11%);
+//                     text-decoration: none;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//     }
