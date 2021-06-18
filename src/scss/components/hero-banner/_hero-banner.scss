@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+// This Hero banner is only for the front page of site on VPUE
+// Black gradient at the top and bottom of the image
+// Centered text
+
+.front {
+
+  &.toolbar-icon-9 {
+    .su-page-banner {
+      .vpue-hero-banner--has-image {
+        margin-top: -206px;
+      }
+    }
+  }
+
+  .su-brand-bar {
+    display: none;
+  }
+
+  .su-masthead .su-site-search__input {
+    background: transparent;
+
+    &::placeholder {
+      color: $su-color-white;
+    }
+  }
+
+  header {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .su-page-banner {
+
+    .vpue-hero-banner--has-image {
+      position: relative;
+      margin-top: -150px;
+      width: 100vw;
+    }
+
+    .su-hero__media {
+      @include vpue--image-top-gradient;
+
+      picture {
+        position: relative;
+        z-index: -1;
+        display: block;
+      }
+    }
+
+    a {
+      @include vpue-gradient--link;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @include vpue-gradient--link-hover;
+      }
+
+      @include grid-media-max('md') {
+        color: $su-color-black;
+      }
+    }
+
+    .su-hero__card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: $su-color-white;
+      max-width: 94vw;
+      text-align: center;
+
+      @include grid-media-max('md') {
+        color: $su-color-black;
+        text-align: left;
+      }
+    }
+
+    span {
+      color: $vpue-color-sage;
+      text-transform: uppercase;
+    }
+
+    .su-card__button {
+      display: none;
+    }
+
+  }
+
+}
