@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
 // This Hero banner is only for the front page of site on VPUE
-// Black gradient at the top and bottom of the image
-// Centered text
 
 .front {
 
+  // To have it look correct in admin view.
   &.toolbar-icon-9 {
     .su-page-banner {
       .vpue-hero-banner--has-image {
@@ -18,11 +17,13 @@
     display: none;
   }
 
-  .su-masthead .su-site-search__input {
-    background: transparent;
+  .su-masthead {
+    .su-site-search__input {
+      background: transparent;
 
-    &::placeholder {
-      color: $su-color-white;
+      &::placeholder {
+        color: $su-color-white;
+      }
     }
   }
 
@@ -46,6 +47,25 @@
         position: relative;
         z-index: -1;
         display: block;
+      }
+    }
+
+    .su-card__contents {
+      > h2 {
+        > a:hover {
+          color: $su-color-white;
+          text-decoration: none;
+        }
+      }
+
+      > a {
+        background-position: 0 70%;
+
+        &:hover,
+        &:focus,
+        &:visited {
+          background-position: 0 70%;
+        }
       }
     }
 
@@ -81,11 +101,5 @@
       color: $vpue-color-sage;
       text-transform: uppercase;
     }
-
-    .su-card__button {
-      display: none;
-    }
-
   }
-
 }

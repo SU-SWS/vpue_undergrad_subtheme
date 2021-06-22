@@ -21,14 +21,16 @@ function vpue_undergrad_subtheme_theme_suggestions_block_alter(array &$suggestio
 }
 
 /**
- * Implements hook_theme_suggestions_pattern_hero_alter().
+ * Prepares variable for the front page to have the banner effect.
  */
-
+function vpue_undergrad_subtheme_preprocess_field__su_page_banner(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['items'][0]['content']['#is_front'] = TRUE;
+  }
+}
 
 /**
  * Prepares variables for the paragraph - mainly used when editing the paragraph
- */
-/**
  * Implements hook_preprocess_HOOK().
  */
 function vpue_undergrad_subtheme_preprocess_ds_entity_view(&$variables) {
@@ -42,13 +44,30 @@ function vpue_undergrad_subtheme_preprocess_ds_entity_view(&$variables) {
 
   // Process Banners
   if ( $paragraph->bundle() == 'stanford_banner') {
-    vpue_undergrad_preprocess_banner($variables);
+    vpue_undergrad_subtheme_preprocess_banner($variables);
+  }
+
+  // Is front page variable
+  if (!empty($variables['content']['#is_front']) && $variables['content']['#is_front']) {
+    $variables['content']['#variant'] = 'front';
   }
 }
 
-function vpue_undergrad_preprocess_banner(&$variables) {
+/**
+ * Setting the unique name for the banner on the front page.
+ */
+function vpue_undergrad_subtheme_preprocess_pattern_hero(&$variables) {
+  if ($variables['variant'] == 'front') {
+    $variables['variant'] = 'default';
+    $variables['is_front'] = TRUE;
+  }
+}
 
-  // Used to get the template for the
+/**
+ * Adding classes for the banners.
+ */
+function vpue_undergrad_subtheme_preprocess_banner(&$variables) {
+  // Used to get the template for the top hero banner
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
 // If banner has an image, add a class
@@ -76,3 +95,5 @@ function vpue_undergrad_preprocess_banner(&$variables) {
     $variables['attributes']['class'][] = 'vpue-hero-banner--no-image';
   }
 }
+
+
