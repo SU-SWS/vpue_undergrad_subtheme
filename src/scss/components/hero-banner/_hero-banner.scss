@@ -20,6 +20,8 @@
   .su-masthead {
     .su-site-search__input {
       background: transparent;
+      color: $su-color-white;
+      font-family: $su-font-sans;
 
       &::placeholder {
         color: $su-color-white;

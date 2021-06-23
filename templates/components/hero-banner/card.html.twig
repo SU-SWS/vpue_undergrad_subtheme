@@ -65,9 +65,11 @@
 
       {%- block block_card_body %}
         {# An open field for body content #}
-        <a href="{{ card_link }}" {{ card_cta_attributes }}>
-          {{ card_body }}
-        </a>
+          <p>
+            <a href="{{ card_link }}" {{ card_cta_attributes }}>
+            {{ card_body|render|striptags('<em><strong>')|raw }}
+            </a>
+          </p>
       {% endblock -%}
 
       {%- block block_card_cta %}

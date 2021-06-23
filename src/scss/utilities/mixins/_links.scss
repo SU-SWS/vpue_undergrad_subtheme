@@ -6,17 +6,26 @@
   text-decoration: none;
   background: linear-gradient(to right, $vpue-color-sea, $vpue-color-light-sea, $vpue-color-sage);
   background-repeat: repeat-x;
-  background-size: 100% 2px;
+  background-size: 100% 0.15em;
   background-position: 0 95%;
 }
 
 @mixin vpue-gradient--link-hover {
   background: linear-gradient(to right, $vpue-color-sage, $vpue-color-sage);
   background-repeat: repeat-x;
-  background-size: 100% 2px;
+  background-size: 100% 0.15em;
   background-position: 0 95%;
 }
 
 @mixin vpue--image-top-gradient {
   background: linear-gradient(to bottom, black, transparent, black);
+}
+
+@mixin vpue-gradient--nav {
+  color: $su-color-white;
+  text-decoration: none;
+  background: linear-gradient(to right, $vpue-color-sea, $vpue-color-light-sea);
+  background-repeat: repeat-x;
+  background-size: 100% .3em;
+  background-position: 100% 14%;
 }
