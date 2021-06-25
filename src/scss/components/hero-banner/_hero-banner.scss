@@ -38,11 +38,28 @@
 
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -150px;
+      margin-top: -221px;
       width: 100vw;
     }
 
-    .su-hero__media {
+    .su-hero {
+      position: relative;
+      justify-content: flex-end;
+
+      //@include grid-media('md') {
+      //  border: 3px solid lime;
+      //}
+      //
+      //@include grid-media('lg') {
+      //  border: 3px solid white;
+      //}
+      //
+      //@include grid-media('xl') {
+      //  border: 3px solid orange;
+      //}
+    }
+
+      .su-hero__media {
       @include vpue--image-top-gradient;
 
       picture {
@@ -54,6 +71,8 @@
 
     .su-card__contents {
       > h2 {
+        @include modular-typography(4);
+
         > a:hover {
           color: $su-color-white;
           text-decoration: none;
@@ -73,6 +92,9 @@
 
     a {
       @include vpue-gradient--link;
+      @include modular-typography(2);
+
+      font-weight: $su-font-bold;
 
       &:hover,
       &:focus,
@@ -80,7 +102,7 @@
         @include vpue-gradient--link-hover;
       }
 
-      @include grid-media-max('md') {
+      @include grid-media-max('lg') {
         color: $su-color-black;
       }
     }
@@ -93,15 +115,19 @@
       max-width: 94vw;
       text-align: center;
 
-      @include grid-media-max('md') {
+      @include grid-media-max('lg') {
         color: $su-color-black;
         text-align: left;
       }
     }
 
     span {
-      color: $vpue-color-sage;
+      color: $vpue-color-light-sage;
       text-transform: uppercase;
+
+      @include grid-media-max('lg') {
+        color: $vpue-color-purple;
+      }
     }
   }
 }

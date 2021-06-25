@@ -64,11 +64,22 @@ function vpue_undergrad_subtheme_preprocess_pattern_hero(&$variables) {
 }
 
 /**
+* Changing the log for the homepage.
+*/
+function vpue_undergrad_subtheme_preprocess_block(&$variables) {
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  if ($variables['base_plugin_id'] == 'system_branding_block')  {
+    if (!empty($variables['is_front'])) {
+      $variables['site_logo'] = '/themes/custom/vpue_undergrad_subtheme/dist/assets/png/StanfordUndergradDiamond_LC.png';
+    }
+  }
+}
+
+
+/**
  * Adding classes for the banners.
  */
 function vpue_undergrad_subtheme_preprocess_banner(&$variables) {
-  // Used to get the template for the top hero banner
-  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
 // If banner has an image, add a class
   if(isset($variables['content']['#fields']['hero_image']['su_banner_image']['#object']) ) {
