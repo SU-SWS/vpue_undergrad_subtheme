@@ -8,7 +8,7 @@
   &.toolbar-icon-9 {
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -206px;
+        margin-top: -278px;
       }
     }
   }
@@ -73,9 +73,13 @@
       > h2 {
         @include modular-typography(4);
 
-        > a:hover {
-          color: $su-color-white;
-          text-decoration: none;
+        > a {
+          &:hover,
+          &:focus,
+          &:visited {
+            color: $su-color-white;
+            text-decoration: none;
+          }
         }
       }
 
