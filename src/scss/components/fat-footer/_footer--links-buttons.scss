@@ -58,6 +58,7 @@
   nav {
     // all regular navigation links
     a {
+      @include sans;
       color: $su-color-white;
       text-decoration: none;
 
