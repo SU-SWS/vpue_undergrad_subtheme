@@ -9,7 +9,14 @@
 
 // Solid Colors
 $vpue-color-orange: #F4795B;
+$vpue-color-sage: #C7D571;
+$vpue-color-sea: #02807E;
+$vpue-color-light-sea: #02B4B3;
+$vpue-color-light-sage: #CCCC66;
+$vpue-color-purple: #620159;
 
 // Gradient Colors
 $vpue-gradient-black-to-purple: linear-gradient(87.98deg, #000000 -13.4%, #030002 15.48%, #0B000A 32.89%, #190017 47.27%, #2E0029 60%, #480041 71.51%, #620059 80.58%);
 $vpue-gradient-footer-divider: linear-gradient(270deg, #DAD7CB 0%, rgba(218, 213, 201, 0.9166) 27.09%, rgba(218, 207, 194, 0.8866) 36.85%, rgba(219, 196, 183, 0.8652) 43.81%, rgba(220, 180, 166, 0.8479) 49.44%, rgba(220, 160, 144, 0.8331) 54.26%, rgba(222, 134, 116, 0.8199) 58.52%, rgba(223, 105, 85, 0.8084) 62.28%, rgba(224, 79, 57, 0.8) 65%, #8F993E 75%, rgba(39, 153, 137, 0.8) 85%, rgba(98, 0, 89, 0.8) 100%);
+
+$vpue-gradient-sea-to-sage: linear-gradient(to right, $vpue-color-sea, $vpue-color-light-sea, $vpue-color-sage);
