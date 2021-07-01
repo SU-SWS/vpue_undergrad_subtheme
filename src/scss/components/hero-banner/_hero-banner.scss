@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+// This Hero banner is only for the front page of site on VPUE
+
+.front {
+
+  // To have it look correct in admin view.
+  &.toolbar-icon-9 {
+    .su-page-banner {
+      .vpue-hero-banner--has-image {
+        margin-top: -278px;
+      }
+    }
+  }
+
+  .su-brand-bar {
+    display: none;
+  }
+
+  .su-masthead {
+    .su-site-search__input {
+      background: transparent;
+      color: $su-color-white;
+      font-family: $su-font-sans;
+
+      &::placeholder {
+        color: $su-color-white;
+      }
+    }
+  }
+
+  header {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .su-page-banner {
+
+    .vpue-hero-banner--has-image {
+      position: relative;
+      margin-top: -221px;
+      width: 100vw;
+    }
+
+    .su-hero {
+      position: relative;
+      justify-content: flex-end;
+
+      //@include grid-media('md') {
+      //  border: 3px solid lime;
+      //}
+      //
+      //@include grid-media('lg') {
+      //  border: 3px solid white;
+      //}
+      //
+      //@include grid-media('xl') {
+      //  border: 3px solid orange;
+      //}
+    }
+
+      .su-hero__media {
+      @include vpue--image-top-gradient;
+
+      picture {
+        position: relative;
+        z-index: -1;
+        display: block;
+      }
+    }
+
+    .su-card__contents {
+      > h2 {
+        @include modular-typography(4);
+
+        > a {
+          &:hover,
+          &:focus,
+          &:visited {
+            color: $su-color-white;
+            text-decoration: none;
+          }
+        }
+      }
+
+      > a {
+        background-position: 0 70%;
+
+        &:hover,
+        &:focus,
+        &:visited {
+          background-position: 0 70%;
+        }
+      }
+    }
+
+    a {
+      @include vpue-gradient--link;
+      @include modular-typography(2);
+
+      font-weight: $su-font-bold;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @include vpue-gradient--link-hover;
+      }
+
+      @include grid-media-max('lg') {
+        color: $su-color-black;
+      }
+    }
+
+    .su-hero__card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: $su-color-white;
+      max-width: 94vw;
+      text-align: center;
+
+      @include grid-media-max('lg') {
+        color: $su-color-black;
+        text-align: left;
+      }
+    }
+
+    span {
+      color: $vpue-color-light-sage;
+      text-transform: uppercase;
+
+      @include grid-media-max('lg') {
+        color: $vpue-color-purple;
+      }
+    }
+  }
+}

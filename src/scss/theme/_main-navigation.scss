@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.su-masthead {
+  .su-multi-menu,
+  .su-site-search {
+    font-family: $su-font-sans;
+  }
+
+  .su-lockup__custom-logo {
+    max-width: 300px;
+  }
+
+  .su-lockup__cell1 {
+    max-width: 325px;
+  }
+}
