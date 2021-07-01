@@ -15,7 +15,14 @@
     }
 
     &::after {
-      display: none;
+      background-color: $su-color-white;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $vpue-color-orange;
+      }
     }
   }
 

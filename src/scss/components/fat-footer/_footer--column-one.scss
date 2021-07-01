@@ -1,7 +1,18 @@
 @charset "UTF-8";
 
+
 /* First Column Styles */
 .vpue-fat-footer {
+
+  a.mailto svg {
+    fill: $su-color-white;
+  
+    &:hover,
+    &:focus {
+      fill: $vpue-color-orange;
+    }
+  }
+
   .vpue-fat-footer__logo {
     @include modular-spacing('padding-top', 4);
     @include modular-spacing('padding-left', 4);
@@ -24,7 +35,36 @@
     }
 
     .contact-email {
+      @include sans;
       font-weight: bold;
+      color: $su-color-white;
+      text-decoration: none;
+
+      // .a.mailto svg {
+      //   fill: $su-color-white;
+
+      //   &:hover,
+      //   &:focus {
+      //     fill: $su-color-white;
+      //   }
+      // }
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: $vpue-color-orange;
+      }
+
+      &::after {
+        fill: $su-color-white;
+      }
+  
+      &:hover,
+      &:focus {
+        &::after {
+          background-color: $vpue-color-orange;
+        }
+      }
     }
   }
 
