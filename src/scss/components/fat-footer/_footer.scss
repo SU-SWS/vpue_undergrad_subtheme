@@ -40,8 +40,14 @@
       color: $su-color-white;
       font-size: 1.9rem;
     }
+    
+    
   }
-
+  
+  .vpue-fat-footer__description {
+    @include modular-spacing('padding-bottom', 2);
+  }
+  
   .vpue-fat-footer__columns {
     @include modular-spacing('padding-top', 2);
 

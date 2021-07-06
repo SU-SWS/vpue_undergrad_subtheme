@@ -6,12 +6,12 @@ html {
 }
 
 // overriding fonts from Stanford Basic
-.su-button,
-.su-button--big,
-.su-button--big.su-link,
-.su-button--secondary,
-.su-button--secondary.su-link,
-.su-button.su-link,
+// .su-button,
+// .su-button--big,
+// .su-button--big.su-link,
+// .su-button--secondary,
+// .su-button--secondary.su-link,
+// .su-button.su-link,
 .su-cta .su-cta__button,
 .su-local-footer__header
 .su-link--internal,
@@ -31,14 +31,16 @@ body {
   color: $su-color-black;
 }
 
-// Do NOT override the fonts in the global footer
-.su-global-footer {
+// Do NOT override the fonts in the global and local footer
+.su-global-footer,
+.su-local-footer,
+.su-local-footer__list-heading,
+.vpue-fat-footer {
   @include sans;
 }
 
 p {
   line-height: $su-base-line-height;
-  @include margin(0 null 1em null);
 }
 
 h1,
