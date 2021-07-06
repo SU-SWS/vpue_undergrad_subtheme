@@ -2,10 +2,12 @@
 
 .front {
   .su-multi-menu {
-    background: $vpue-gradient-sea-to-sage;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15em;
-    background-position: 100% 22%;
+    @include grid-media-min('lg') {
+      background: $vpue-gradient-sea-to-sage;
+      background-repeat: repeat-x;
+      background-size: 100% 0.15em;
+      background-position: 100% 22%;
+    }
 
     .su-multi-menu__menu-lv1 {
       > .su-multi-menu__item {
@@ -14,17 +16,21 @@
           @include modular-typography(1);
           color: $su-color-white;
 
-          &:hover,
-          &:focus,
-          &:active {
-            @include vpue-gradient--nav;
-            color: $su-color-white;
+          @include grid-media-min('lg') {
+            &:hover,
+            &:focus,
+            &:active {
+              @include vpue-gradient--nav;
+              color: $su-color-white;
+            }
           }
         }
 
         &.su-multi-menu__item--current {
           > .su-multi-menu__link {
-            @include vpue-gradient--nav;
+            @include grid-media-min('lg') {
+              @include vpue-gradient--nav;
+            }
 
             color: $su-color-white;
 

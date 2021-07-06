@@ -74,8 +74,12 @@
           &:hover,
           &:focus,
           &:visited {
-            color: $su-color-white;
+            color: $su-color-black;
             text-decoration: none;
+
+            @include grid-media-min('lg') {
+              color: $su-color-white;
+            }
           }
         }
       }
