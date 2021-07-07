@@ -57,7 +57,7 @@
       }
 
         //move the card below the image
-      @include grid-media-max('md') {
+      @include grid-media-max('lg') {
         position: relative;
       }
     }
