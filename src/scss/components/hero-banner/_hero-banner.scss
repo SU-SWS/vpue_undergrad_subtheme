@@ -5,11 +5,14 @@
 .front {
 
   // To have it look correct in admin view.
-  &.toolbar-icon-9 {
+  &.role--authenticated {
     .su-page-banner {
       .vpue-hero-banner--has-image {
         margin-top: -278px;
       }
+    }
+    .block--local-tasks {
+      z-index: 11;
     }
   }
 
@@ -40,6 +43,10 @@
       position: relative;
       margin-top: -221px;
       width: 100vw;
+
+      @include grid-media-max('lg') {
+        margin-top: -323px;
+      }
     }
 
     .su-hero {
