@@ -77,7 +77,7 @@
             color: $su-color-black;
             text-decoration: none;
 
-            @include grid-media-min('lg') {
+            @include grid-media-min('xl') {
               color: $su-color-white;
             }
           }
