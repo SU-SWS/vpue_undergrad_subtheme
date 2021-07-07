@@ -73,10 +73,11 @@ $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
   if ($variables['base_plugin_id'] == 'system_branding_block')  {
 
-   if ($variables['is_front'] === TRUE) {
+   if ($variables['is_front']) {
       $variables['site_logo'] = drupal_get_path('theme', 'vpue_undergrad_subtheme') . '/dist/assets/png/StanfordUndergrad_Diamond_LC.png';
+    } else {
+      $variables['site_logo'] = drupal_get_path('theme', 'vpue_undergrad_subtheme') . '/dist/assets/png/StanfordUndergrad_Diamond_CB.png';
     }
-
   }
 }
 

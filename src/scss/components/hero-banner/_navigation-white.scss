@@ -25,6 +25,25 @@
       background-position: 100% 22%;
     }
 
+    &.su-multi-menu--dropdowns {
+      .su-multi-menu__menu {
+        > .su-multi-menu__item--parent {
+          > .su-nav-toggle {
+            &::before {
+              background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+            }
+
+            &:focus,
+            &:hover {
+              &::before {
+                background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
     .su-multi-menu__menu-lv1 {
       > .su-multi-menu__item {
 
