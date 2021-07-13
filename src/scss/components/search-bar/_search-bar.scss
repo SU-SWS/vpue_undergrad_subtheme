@@ -1,14 +1,26 @@
 @charset "UTF-8";
 
-// .su-site-search__input {
-//   border-radius: 0;
-//   padding: 0.9rem 3.9rem 0.9rem 1.6rem;
-// }
+.su-masthead {
+  .su-site-search__input {
+    font-family: $su-font-sans;
+    border: 1px solid rgba(98,0,89, 0.5);
 
-// .su-site-search__submit {
-//   background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-//   width: 18px;
-//   height: 18px;
-//   background-size: 18px;
-//   top: 1.3rem;
-// }
+    &::placeholder {
+      color: #620059;
+      opacity: 0.7;
+    }
+  }
+}
+
+.su-site-search__submit {
+  background: url("/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--plum.png") no-repeat 0 0;
+  opacity: 0.7;
+  width: 18px;
+  height: 18px;
+  background-size: 18px;
+  top: 1.3rem;
+}
+
+.su-masthead .su-site-search__submit {
+  opacity: 0.7;
+}
