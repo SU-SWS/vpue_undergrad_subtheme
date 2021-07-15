@@ -16,6 +16,13 @@
     }
   }
 
+  // Moving the alert to the top when
+  .su-alert {
+    position: relative;
+    top: -221px;
+    z-index: 15;
+  }
+
   // Remove the red brand bar
   .su-brand-bar {
     display: none;
