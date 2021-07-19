@@ -7,14 +7,3 @@
 
 {# Change the brand bar #}
 {%- set template_brand_bar = "@vpue_undergrad_subtheme/components/brand-bar/vpue--brand-bar.html.twig" %}
-
-{# Override the block_header to swap in our lockup. #}
-{% block block_header %}
-  <header class="su-masthead su-masthead--right">
-    <section>
-      {%- include "@vpue_undergrad_subtheme/components/lockup/vpue--lockup.html.twig" with { modifier_class : "su-lockup--option-a", line1: site_name } -%}
-      {{ page.search }}
-      {{ page.menu }}
-    </section>
-  </header>
-{% endblock %}
