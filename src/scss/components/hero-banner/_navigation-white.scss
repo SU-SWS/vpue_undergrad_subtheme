@@ -1,11 +1,51 @@
 @charset "UTF-8";
 
 .front {
+
+  .su-masthead {
+    .su-lockup__line1,
+    .su-lockup__line2,
+    .su-lockup__line3,
+    .su-lockup__line4,
+    .su-lockup__line5 {
+      color: $su-color-white;
+    }
+
+    .su-lockup__cell1 {
+      border-right: 1px solid $su-color-white;
+    }
+
+    .su-lockup__cell2 {
+      border-left: 1px solid $su-color-white;
+    }
+  }
+
   .su-multi-menu {
-    background: $vpue-gradient-sea-to-sage;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15em;
-    background-position: 100% 22%;
+    @include grid-media-min('lg') {
+      background: $vpue-gradient-sea-to-sage;
+      background-repeat: repeat-x;
+      background-size: 100% 0.15em;
+      background-position: 100% 22%;
+    }
+
+    &.su-multi-menu--dropdowns {
+      .su-multi-menu__menu {
+        > .su-multi-menu__item--parent {
+          > .su-nav-toggle {
+            &::before {
+              background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+            }
+
+            &:focus,
+            &:hover {
+              &::before {
+                background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+              }
+            }
+          }
+        }
+      }
+    }
 
     .su-multi-menu__menu-lv1 {
       > .su-multi-menu__item {
@@ -14,17 +54,21 @@
           @include modular-typography(1);
           color: $su-color-white;
 
-          &:hover,
-          &:focus,
-          &:active {
-            @include vpue-gradient--nav;
-            color: $su-color-white;
+          @include grid-media-min('lg') {
+            &:hover,
+            &:focus,
+            &:active {
+              @include vpue-gradient--nav;
+              color: $su-color-white;
+            }
           }
         }
 
         &.su-multi-menu__item--current {
           > .su-multi-menu__link {
-            @include vpue-gradient--nav;
+            @include grid-media-min('lg') {
+              @include vpue-gradient--nav;
+            }
 
             color: $su-color-white;
 

@@ -13,6 +13,7 @@
     }
   }
 
+  // Remove the red brand bar
   .su-brand-bar {
     display: none;
   }
@@ -35,7 +36,6 @@
   }
 
   .su-page-banner {
-
     .vpue-hero-banner--has-image {
       position: relative;
       margin-top: -221px;
@@ -45,18 +45,6 @@
     .su-hero {
       position: relative;
       justify-content: flex-end;
-
-      //@include grid-media('md') {
-      //  border: 3px solid lime;
-      //}
-      //
-      //@include grid-media('lg') {
-      //  border: 3px solid white;
-      //}
-      //
-      //@include grid-media('xl') {
-      //  border: 3px solid orange;
-      //}
     }
 
       .su-hero__media {
@@ -67,18 +55,31 @@
         z-index: -1;
         display: block;
       }
+
+        //move the card below the image
+      @include grid-media-max('lg') {
+        position: relative;
+      }
     }
 
     .su-card__contents {
       > h2 {
         @include modular-typography(4);
+        @include grid-media-max('lg') {
+          color: $su-color-black;
+          text-align: left;
+        }
 
         > a {
           &:hover,
           &:focus,
           &:visited {
-            color: $su-color-white;
+            color: $su-color-black;
             text-decoration: none;
+
+            @include grid-media-min('xl') {
+              color: $su-color-white;
+            }
           }
         }
       }
