@@ -1,7 +1,18 @@
 @charset "UTF-8";
 
+
 /* First Column Styles */
 .vpue-fat-footer {
+
+  a.mailto svg {
+    fill: $su-color-white;
+  
+    &:hover,
+    &:focus {
+      fill: $vpue-color-orange;
+    }
+  }
+
   .vpue-fat-footer__logo {
     @include modular-spacing('padding-top', 4);
     @include modular-spacing('padding-left', 4);
@@ -20,11 +31,37 @@
     @include modular-spacing('padding-bottom', 2);
 
     .contact-line1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
+      @include vpue-font--lora-base;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
     }
 
-    .contact-email {
-      font-weight: bold;
+    .contact-link {
+      font-weight: 700;
+      color: $su-color-white;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: $vpue-color-orange;
+      }
+
+      &::after {
+        fill: $su-color-white;
+      }
+  
+      &:hover,
+      &:focus {
+        &::after {
+          background-color: $vpue-color-orange;
+        }
+      }
+    }
+
+    .contact-phone {
+      font-weight: normal;
     }
   }
 

@@ -6,22 +6,10 @@ html {
 }
 
 // overriding fonts from Stanford Basic
-.su-button,
-.su-button--big,
-.su-button--big.su-link,
-.su-button--secondary,
-.su-button--secondary.su-link,
-.su-button.su-link,
-.su-cta .su-cta__button,
-.su-local-footer__header
 .su-link--internal,
-[type="button"],
 [type="image"],
 [type="reset"],
-[type="submit"],
-button,
-.su-multi-menu,
-.su-masthead .su-site-search__input {
+[type="submit"] {
   @include vpue-font--lora-base;
 }
 
@@ -31,14 +19,16 @@ body {
   color: $su-color-black;
 }
 
-// Do NOT override the fonts in the global footer
-.su-global-footer {
+// Do NOT override the fonts in the global footer, local footer, fat footer and lockup
+.su-global-footer,
+.su-local-footer,
+.vpue-fat-footer,
+.su-lockup {
   @include sans;
 }
 
 p {
   line-height: $su-base-line-height;
-  @include margin(0 null 1em null);
 }
 
 h1,
