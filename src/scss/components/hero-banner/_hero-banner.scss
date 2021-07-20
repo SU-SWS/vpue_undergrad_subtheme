@@ -5,12 +5,22 @@
 .front {
 
   // To have it look correct in admin view.
-  &.toolbar-icon-9 {
+  &.role--authenticated {
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -278px;
+        margin-top: -282px;
       }
     }
+    .block--local-tasks {
+      z-index: 11;
+    }
+  }
+
+  // Moving the alert to the top when
+  .su-alert {
+    position: relative;
+    top: -225px;
+    z-index: 15;
   }
 
   // Remove the red brand bar
@@ -21,6 +31,7 @@
   .su-masthead {
     .su-site-search__input {
       background: transparent;
+      border: 1px solid $su-color-white;
       color: $su-color-white;
       font-family: $su-font-sans;
 
@@ -38,8 +49,12 @@
   .su-page-banner {
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -221px;
+      margin-top: -225px;
       width: 100vw;
+
+      @include grid-media-max('lg') {
+        margin-top: -323px;
+      }
     }
 
     .su-hero {
@@ -47,7 +62,7 @@
       justify-content: flex-end;
     }
 
-      .su-hero__media {
+    .su-hero__media {
       @include vpue--image-top-gradient;
 
       picture {

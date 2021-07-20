@@ -3,6 +3,21 @@
 .front {
 
   .su-masthead {
+    .su-lockup__logo-wrapper {
+      .vpue-lockup__su,
+      .vpue-lockup__vpue {
+        color: $su-color-white;
+      }
+    
+      .su,
+      .vpue {
+        fill: currentColor;
+      }
+    }
+  }
+  
+
+  .su-masthead {
     .su-lockup__line1,
     .su-lockup__line2,
     .su-lockup__line3,
@@ -21,7 +36,7 @@
   }
 
   .su-multi-menu {
-    @include grid-media-min('lg') {
+    @include grid-media-min('xl') {
       background: $vpue-gradient-sea-to-sage;
       background-repeat: repeat-x;
       background-size: 100% 0.15em;
@@ -80,9 +95,5 @@
         }
       }
     }
-  }
-
-  .su-site-search__submit {
-    background: url('/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--white.png') no-repeat 0 0;
   }
 }
