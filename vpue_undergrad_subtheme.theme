@@ -19,3 +19,100 @@ function vpue_undergrad_subtheme_theme_suggestions_block_alter(array &$suggestio
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+
+/**
+ * Prepares variable for the front page to have the banner effect.
+ */
+function vpue_undergrad_subtheme_preprocess_field__su_page_banner(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['items'][0]['content']['#is_front'] = TRUE;
+  }
+}
+
+/**
+ * Prepares variables for the paragraph - mainly used when editing the paragraph
+ * Implements hook_preprocess_HOOK().
+ */
+function vpue_undergrad_subtheme_preprocess_ds_entity_view(&$variables) {
+
+// if not running on a paragraph, exit out.
+  if (!isset($variables['content']['#paragraph'])){
+    return;
+  }
+
+  $paragraph = $variables['content']['#paragraph'];
+
+  // Process Banners
+  if ( $paragraph->bundle() == 'stanford_banner') {
+    vpue_undergrad_subtheme_preprocess_banner($variables);
+  }
+
+  // Is front page variable
+  if (!empty($variables['content']['#is_front']) && $variables['content']['#is_front']) {
+    $variables['content']['#variant'] = 'front';
+  }
+}
+
+/**
+ * Setting the unique name for the banner on the front page.
+ */
+function vpue_undergrad_subtheme_preprocess_pattern_hero(&$variables) {
+  if ($variables['variant'] == 'front') {
+    $variables['variant'] = 'default';
+    $variables['is_front'] = TRUE;
+  }
+}
+
+/**
+* Changing the logo for the homepage.
+*/
+
+function vpue_undergrad_subtheme_preprocess_block__system_branding_block(&$variables) {
+
+$variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+  if ($variables['base_plugin_id'] == 'system_branding_block')  {
+
+  if (!isset($variables['is_front'])){
+    $variables['site_logo'] = drupal_get_path('theme', 'vpue_undergrad_subtheme') . '/dist/assets/png/StanfordUndergrad_Diamond_CB.png';
+  }
+
+   if ($variables['is_front']) {
+      $variables['site_logo'] = drupal_get_path('theme', 'vpue_undergrad_subtheme') . '/dist/assets/png/StanfordUndergrad_Diamond_LC.png';
+    }
+  }
+}
+
+
+/**
+ * Adding classes for the banners.
+ */
+function vpue_undergrad_subtheme_preprocess_banner(&$variables) {
+
+// If banner has an image, add a class
+  if(isset($variables['content']['#fields']['hero_image']['su_banner_image']['#object']) ) {
+    $variables['attributes']['class'][] = 'vpue-hero-banner--has-image';
+
+    // Banners use 'full_responsive' mode already. This is a placeholder to use this line once a responsive 1:1 ratio style exists in our d8core
+    // $variables['content']['#fields']['hero_image']['su_banner_image'][0]['#stanford_media_image_style'] = 'full_responsive';
+
+    // Check if there is a card
+    if(isset($variables['content']['#fields']['hero_super_headline']['su_banner_sup_header']['#object']) || isset($variables['content']['#fields']['hero_headline']['su_banner_header']['#object']) || isset($variables['content']['#fields']['hero_body']['su_banner_body']['#object']) ) {
+      $variables['attributes']['class'][] = 'vpue-hero-banner--has-card';
+
+    } else {
+      $variables['attributes']['class'][] = 'vpue-hero-banner--no-card';
+    }
+
+    // Check if on the homepage and use different banner twig file.
+      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+      if ($variables['is_front'] === TRUE) {
+        $variables['attributes']['class'][] = 'vpue-hero-banner--has-image-on-homepage';
+      }
+
+  } else {
+    $variables['attributes']['class'][] = 'vpue-hero-banner--no-image';
+  }
+}
+
+

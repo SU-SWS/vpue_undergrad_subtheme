@@ -17,12 +17,10 @@
 // .component-name--variant
 // .component-name__sub-object
 
-// Config and supporting scss.
-@import
-  '../config/index';
-
 // Components.
 // @import 'component-name/index';
 @import 'brand-bar/index';
 @import 'main-nav/index';
 @import 'search-bar/index';
+@import 'fat-footer/index';
+@import 'hero-banner/index';
