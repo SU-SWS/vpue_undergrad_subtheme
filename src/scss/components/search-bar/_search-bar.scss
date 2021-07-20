@@ -21,7 +21,18 @@
   top: 1.3rem;
 }
 
-.su-masthead .su-site-search__submit {
-  opacity: 0.5;
-  background-size: 20px;
+.su-masthead {
+  .su-site-search__submit {
+    opacity: 0.5;
+    background-size: 20px;
+  }
+}
+
+// styles for the white navigation on hp only.
+.front {
+  .su-site-search__submit {
+    background: url('/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--white.png') no-repeat 0 0;
+    opacity: 1;
+    background-size: 20px;
+  }
 }

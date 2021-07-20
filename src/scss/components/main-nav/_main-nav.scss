@@ -5,3 +5,69 @@
     background: linear-gradient(90deg, #620059 0%, #640156 17.75%, #6A044B 32.65%, #750A3A 46.52%, #841122 59.69%, #8C1515 65.19%, #B83A4B 99.11%);
   }
 }
+
+.su-masthead {
+  
+  .su-lockup__logo-wrapper {
+    display: grid;
+    grid-template-columns: [col1-start] 100px  [col2-start] 240px;
+
+    max-width: 340px;
+
+
+    .vpue-lockup__custom-logo {
+      grid-column: col1-start ;
+      grid-row: row1-start / row2-end;
+
+      width: 100px;
+    }
+
+    .vpue-lockup__su {
+      grid-column: col2-start;
+      grid-row: row1-start ;
+
+      color: $su-color-bright-red;
+      max-height: 50px;
+
+      svg {
+        fill: currentColor;
+      }
+    }
+
+    .vpue-lockup__vpue {
+      grid-column: col2-start;
+      grid-row: row2-start ;
+
+      color: $su-color-black;
+      max-height: 50px;
+      margin-top: 1em;
+
+      svg {
+        fill: currentColor;
+      }
+    }
+
+    .su,
+    .vpue {
+      max-width: 100%;
+      height: 100px;
+    }
+  }
+
+  .su-multi-menu,
+  .su-site-search {
+    font-family: $su-font-sans;
+  }
+
+  
+
+  .su-lockup__custom-logo {
+    max-width: 300px;
+  }
+
+
+  .su-lockup__cell1 {
+    max-width: 325px;
+  }
+}
+
