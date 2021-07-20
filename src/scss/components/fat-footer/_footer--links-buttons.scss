@@ -15,12 +15,19 @@
     }
 
     &::after {
-      display: none;
+      background-color: $su-color-white;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $vpue-color-orange;
+      }
     }
   }
 
   .vpue-fat-footer__list-heading-column1b {
-    @include modular-spacing('padding-top', 4);
+    @include modular-spacing('padding-top', 2);
   }
 
   // Social link styles
@@ -58,6 +65,7 @@
   nav {
     // all regular navigation links
     a {
+      @include sans;
       color: $su-color-white;
       text-decoration: none;
 
@@ -76,5 +84,6 @@
   .vpue-fat-footer__list-heading {
     padding-bottom: 0;
     font-size: 2.4rem;
+    margin-bottom: 1.5rem;
   }
 }
