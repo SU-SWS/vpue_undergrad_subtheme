@@ -8,7 +8,7 @@
   &.role--authenticated {
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -278px;
+        margin-top: -282px;
       }
     }
     .block--local-tasks {
@@ -19,7 +19,7 @@
   // Moving the alert to the top when
   .su-alert {
     position: relative;
-    top: -221px;
+    top: -225px;
     z-index: 15;
   }
 
@@ -48,7 +48,7 @@
   .su-page-banner {
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -221px;
+      margin-top: -225px;
       width: 100vw;
 
       @include grid-media-max('lg') {
@@ -61,7 +61,7 @@
       justify-content: flex-end;
     }
 
-      .su-hero__media {
+    .su-hero__media {
       @include vpue--image-top-gradient;
 
       picture {

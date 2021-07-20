@@ -3,6 +3,21 @@
 .front {
 
   .su-masthead {
+    .su-lockup__logo-wrapper {
+      .vpue-lockup__su,
+      .vpue-lockup__vpue {
+        color: $su-color-white;
+      }
+    
+      .su,
+      .vpue {
+        fill: currentColor;
+      }
+    }
+  }
+  
+
+  .su-masthead {
     .su-lockup__line1,
     .su-lockup__line2,
     .su-lockup__line3,
