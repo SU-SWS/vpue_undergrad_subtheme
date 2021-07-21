@@ -61,6 +61,14 @@
       &[aria-expanded=true]:after {
         background: url("#{$su-image-path}/close-white.svg") no-repeat 3px 0;
       }
+
+      &:active:before,
+      &[aria-expanded=false]:focus:before, 
+      &[aria-expanded=false]:hover:before,
+      &[aria-expanded=true]:focus:before, 
+      &[aria-expanded=true]:hover:before {
+        background-color: $su-color-white;
+      }
     }
 
     &.su-multi-menu--dropdowns {
