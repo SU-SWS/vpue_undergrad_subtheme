@@ -111,10 +111,11 @@
     }
 
     a {
-      @include vpue-gradient--link;
       @include modular-typography(2);
 
+      color: $su-color-white;
       font-weight: $su-font-bold;
+      text-decoration: none;
 
       &:hover,
       &:focus,
@@ -142,7 +143,7 @@
     }
 
     span {
-      color: $vpue-color-light-sage;
+      color: $su-color-white;
       text-transform: uppercase;
 
       @include grid-media-max('lg') {

@@ -43,6 +43,20 @@
       background-position: 100% 22%;
     }
 
+    // mobile hamburger white.
+    .su-multi-menu__nav-toggle {
+      color: $su-color-white;
+
+      &:after {
+        background: url("#{$su-image-path}/hamburger-white.svg") no-repeat 3px 0;
+      }
+
+      &[aria-expanded=true]:after {
+        background: url("#{$su-image-path}/close-white.svg") no-repeat 3px 0;
+      }
+
+    }
+
     &.su-multi-menu--dropdowns {
       .su-multi-menu__menu {
         > .su-multi-menu__item--parent {
