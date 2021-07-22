@@ -86,9 +86,13 @@
         }
 
         > a {
+          @include vpue-gradient--link;
+
           &:hover,
           &:focus,
           &:visited {
+            @include vpue-gradient--link-hover;
+
             color: $su-color-black;
             text-decoration: none;
 
