@@ -51,9 +51,9 @@
       position: relative;
       margin-top: -225px;
       width: 100vw;
-
-      @include grid-media-max('lg') {
-        margin-top: -323px;
+      
+      @media only screen and (min-width: 992px) and (max-width: 1259px) {
+        margin-top: -285px;
       }
     }
 
@@ -79,14 +79,17 @@
 
     .su-card__contents {
       > h2 {
-        @include modular-typography(4);
-        @include grid-media-max('lg') {
-          color: $su-color-black;
-          text-align: left;
+        @include grid-media-min('xl') {
+          @include modular-typography(4);
         }
 
         > a {
           @include vpue-gradient--link;
+
+          @include grid-media-max('lg') {
+            color: $su-color-black;
+            text-align: left;
+          }
 
           &:hover,
           &:focus,
@@ -115,7 +118,9 @@
     }
 
     a {
-      @include modular-typography(2);
+      @include grid-media-min('xl') {
+        @include modular-typography(2);
+      }
 
       color: $su-color-white;
       font-weight: $su-font-bold;

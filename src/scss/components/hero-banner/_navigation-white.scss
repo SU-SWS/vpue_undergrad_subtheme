@@ -28,10 +28,18 @@
 
     .su-lockup__cell1 {
       border-right: 1px solid $su-color-white;
+
+      @include grid-media-max('md') {
+        border-right: none;
+      }
     }
 
     .su-lockup__cell2 {
       border-left: 1px solid $su-color-white;
+
+      @include grid-media-max('md') {
+        border-left: none;
+      }
     }
   }
 
@@ -41,6 +49,11 @@
       background-repeat: repeat-x;
       background-size: 100% 0.15em;
       background-position: 100% 22%;
+      
+      @media only screen and (min-width: 1200px) and (max-width: 1259px) {
+        background-position: 100% 11%;
+      }
+    
     }
 
     // mobile hamburger white.
