@@ -111,6 +111,11 @@
             @include grid-media-min('md') {
               color: $su-color-white;
             }
+
+            // color change for below the image
+            @include grid-media-max('md') {
+              color: $su-color-black;
+            }
           }
         }
       }
