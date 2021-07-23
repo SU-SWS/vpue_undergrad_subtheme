@@ -11,6 +11,7 @@
   .su-lockup__logo-wrapper {
     display: grid;
     grid-template-columns: [col1-start] 100px  [col2-start] 240px;
+    // grid-template-rows: [row1-start] auto [row2-start];
 
     max-width: 340px;
 

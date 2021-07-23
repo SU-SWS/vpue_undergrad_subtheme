@@ -65,6 +65,9 @@
       @include grid-media-min('lg') {
         min-height: 800px;
       }
+      @include grid-media-max('md') {
+        min-height: 275px;
+      }
     }
 
     .su-hero__media {
@@ -161,6 +164,7 @@
 
     span {
       color: $su-color-white;
+      font-family: $su-font-sans;
       text-transform: uppercase;
 
       // color change for below the image
