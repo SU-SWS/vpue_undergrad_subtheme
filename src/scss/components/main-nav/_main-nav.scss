@@ -11,6 +11,7 @@
   .su-lockup__logo-wrapper {
     display: grid;
     grid-template-columns: [col1-start] 100px  [col2-start] 240px;
+    // grid-template-rows: [row1-start] auto [row2-start];
 
     max-width: 340px;
 
@@ -28,6 +29,7 @@
 
       color: $su-color-bright-red;
       max-height: 50px;
+      margin-left: -40px;
 
       svg {
         fill: currentColor;
@@ -41,6 +43,7 @@
       color: $su-color-black;
       max-height: 50px;
       margin-top: 0.1em;
+      margin-left: -40px;
 
       svg {
         fill: currentColor;
@@ -67,7 +70,7 @@
 
 
   .su-lockup__cell1 {
-    max-width: 325px;
+    max-width: 300px;
   }
 }
 
