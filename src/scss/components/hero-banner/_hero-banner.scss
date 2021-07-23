@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-// This Hero banner is only for the front page of site on VPUE
+// This Hero banner is only for the front page of site on VPUE subtheme
 
 .front {
 
@@ -60,6 +60,11 @@
     .su-hero {
       position: relative;
       justify-content: flex-end;
+
+      // Where we are setting the height of the hero block image
+      @include grid-media-min('lg') {
+        min-height: 800px;
+      }
     }
 
     .su-hero__media {
@@ -71,22 +76,22 @@
         display: block;
       }
 
-        //move the card below the image
-      @include grid-media-max('lg') {
+      //move the card below the image
+      @include grid-media-max('md') {
         position: relative;
       }
     }
 
     .su-card__contents {
       > h2 {
-        @include grid-media-min('xl') {
+        @include grid-media-min('md') {
           @include modular-typography(4);
         }
 
         > a {
           @include vpue-gradient--link;
 
-          @include grid-media-max('lg') {
+          @include grid-media-max('md') {
             color: $su-color-black;
             text-align: left;
           }
@@ -99,7 +104,8 @@
             color: $su-color-black;
             text-decoration: none;
 
-            @include grid-media-min('xl') {
+            // color change for on the image
+            @include grid-media-min('md') {
               color: $su-color-white;
             }
           }
@@ -118,7 +124,7 @@
     }
 
     a {
-      @include grid-media-min('xl') {
+      @include grid-media-min('lg') {
         @include modular-typography(2);
       }
 
@@ -132,7 +138,8 @@
         @include vpue-gradient--link-hover;
       }
 
-      @include grid-media-max('lg') {
+      // color change for below the image
+      @include grid-media-max('md') {
         color: $su-color-black;
       }
     }
@@ -145,7 +152,8 @@
       max-width: 94vw;
       text-align: center;
 
-      @include grid-media-max('lg') {
+      // color change for below the image
+      @include grid-media-max('md') {
         color: $su-color-black;
         text-align: left;
       }
@@ -155,7 +163,8 @@
       color: $su-color-white;
       text-transform: uppercase;
 
-      @include grid-media-max('lg') {
+      // color change for below the image
+      @include grid-media-max('md') {
         color: $vpue-color-purple;
       }
     }
