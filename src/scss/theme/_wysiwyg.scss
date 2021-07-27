@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.su-wysiwyg-text {
+
+    .vpue-big-red-list {
+        list-style: none;
+        counter-reset: big-red-list;
+
+        li {
+            counter-increment: big-red-list;
+            // text-indent: -1em;
+            padding: 0 0 0 .5em;
+
+            &:marker {
+                content: counter(big-red-list) ". ";
+                color: $su-color-bright-red;
+                font-weight: 700;
+                font-size: 2em;
+                margin-right: 1em;
+                border-right: 1px solid $su-color-bright-red;
+                padding-right: 30px;
+              }
+          }
+    }
+}

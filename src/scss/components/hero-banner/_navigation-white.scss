@@ -51,7 +51,7 @@
   }
 
   .su-multi-menu {
-    @include grid-media-min('xl') {
+    @include grid-media-min('lg') {
       background: $vpue-gradient-sea-to-sage;
       background-repeat: repeat-x;
       background-size: 100% 0.15em;
