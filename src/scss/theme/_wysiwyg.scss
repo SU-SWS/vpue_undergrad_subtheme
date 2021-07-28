@@ -2,14 +2,15 @@
 
 .su-wysiwyg-text {
 
-    .vpue-big-red-list {
+    .big-red-list {
         list-style: none;
         counter-reset: big-red-list;
 
         li {
             counter-increment: big-red-list;
             border-left: 1px solid $su-color-bright-red;
-            padding: 0 0 0 1em;
+            padding: 0 0 1em 1em;
+            margin-bottom: 2em;
 
             &::marker {
                 content: counter(big-red-list) ". ";
@@ -20,5 +21,22 @@
                 padding-right: 30px;
               }
           }
+    }
+
+    .inline-heading {
+        :is(h1, h2, h3, h4, h5, h6),
+        .image {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        :is(h1, h2, h3, h4, h5, h6) + .image {
+            padding-left: 1em;
+        }
+
+        .image + :is(h1, h2, h3, h4, h5, h6) {
+            padding-left: 1em;
+        }
+
     }
 }
