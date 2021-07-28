@@ -8,16 +8,15 @@
 
         li {
             counter-increment: big-red-list;
-            // text-indent: -1em;
-            padding: 0 0 0 .5em;
+            border-left: 1px solid $su-color-bright-red;
+            padding: 0 0 0 1em;
 
-            &:marker {
+            &::marker {
                 content: counter(big-red-list) ". ";
                 color: $su-color-bright-red;
                 font-weight: 700;
                 font-size: 2em;
                 margin-right: 1em;
-                border-right: 1px solid $su-color-bright-red;
                 padding-right: 30px;
               }
           }
