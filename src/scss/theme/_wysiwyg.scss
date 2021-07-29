@@ -6,6 +6,14 @@
         list-style: none;
         counter-reset: big-red-list;
 
+        @include grid-media-max('lg') {
+            margin-left: 1em;
+        }
+
+        @include grid-media-max('md') {
+            margin-left: 1.5em;
+        }
+
         li {
             counter-increment: big-red-list;
             border-left: 1px solid $su-color-bright-red;
