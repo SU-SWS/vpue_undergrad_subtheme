@@ -11,6 +11,7 @@
         margin-top: -282px;
       }
     }
+
     .block--local-tasks {
       z-index: 11;
     }
@@ -51,7 +52,7 @@
       position: relative;
       margin-top: -225px;
       width: 100vw;
-      
+
       @media only screen and (min-width: 992px) and (max-width: 1259px) {
         margin-top: -285px;
       }
@@ -65,6 +66,7 @@
       @include grid-media-min('lg') {
         min-height: 800px;
       }
+
       @include grid-media-max('md') {
         min-height: 275px;
       }
