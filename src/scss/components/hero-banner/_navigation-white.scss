@@ -51,17 +51,6 @@
   }
 
   .su-multi-menu {
-    @include grid-media-min('lg') {
-      background: $vpue-gradient-sea-to-sage;
-      background-repeat: repeat-x;
-      background-size: 100% 0.15em;
-      background-position: 100% 22%;
-
-      @media only screen and (min-width: 1200px) and (max-width: 1259px) {
-        background-position: 100% 11%;
-      }
-
-    }
 
     // mobile hamburger white.
     .su-multi-menu__nav-toggle {
