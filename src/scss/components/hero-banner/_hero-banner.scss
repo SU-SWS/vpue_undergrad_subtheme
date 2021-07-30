@@ -8,7 +8,7 @@
   &.role--authenticated {
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -282px;
+        // margin-top: -282px;
       }
     }
 
@@ -20,7 +20,7 @@
   // Moving the alert to the top when
   .su-alert {
     position: relative;
-    top: -225px;
+    // top: -225px;
     z-index: 15;
   }
 
@@ -47,15 +47,20 @@
     box-shadow: none;
   }
 
+  // Move content for the absolute positioning.
+  .jumpstart-ui--one-column.centered-container {
+    margin-top: 650px;
+  }
+
   .su-page-banner {
     .vpue-hero-banner--has-image {
-      position: relative;
-      margin-top: -225px;
+      position: absolute;
+      top: 0;
       width: 100vw;
 
-      @media only screen and (min-width: 992px) and (max-width: 1259px) {
-        margin-top: -285px;
-      }
+      // @media only screen and (min-width: 992px) and (max-width: 1259px) {
+      //   margin-top: -285px;
+      // }
     }
 
     .su-hero {
