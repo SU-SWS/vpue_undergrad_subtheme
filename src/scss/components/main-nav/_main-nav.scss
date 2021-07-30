@@ -7,14 +7,13 @@
 }
 
 .su-masthead {
-  
+
   .su-lockup__logo-wrapper {
     display: grid;
     grid-template-columns: [col1-start] 100px  [col2-start] 240px;
     // grid-template-rows: [row1-start] auto [row2-start];
 
     max-width: 340px;
-
 
     .vpue-lockup__custom-logo {
       grid-column: col1-start ;
@@ -62,15 +61,19 @@
     font-family: $su-font-sans;
   }
 
-  
-
   .su-lockup__custom-logo {
     max-width: 300px;
   }
 
-
   .su-lockup__cell1 {
     max-width: 300px;
   }
+
+  @include grid-media-min('lg') {
+    .su-lockup__cell2 {
+      margin-bottom: 17px;
+    }
+  }
+
 }
 

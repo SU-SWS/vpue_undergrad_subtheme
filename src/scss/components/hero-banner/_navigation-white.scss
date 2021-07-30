@@ -8,14 +8,14 @@
       .vpue-lockup__vpue {
         color: $su-color-white;
       }
-    
+
       .su,
       .vpue {
         fill: currentColor;
       }
     }
   }
-  
+
 
   .su-masthead {
     .su-lockup__line1,
@@ -30,7 +30,7 @@
       .su-lockup__cell1,
       .su-lockup__cell2 {
         border-right: none;
-      }  
+      }
     }
 
     .su-lockup__cell1 {
@@ -51,17 +51,6 @@
   }
 
   .su-multi-menu {
-    @include grid-media-min('lg') {
-      background: $vpue-gradient-sea-to-sage;
-      background-repeat: repeat-x;
-      background-size: 100% 0.15em;
-      background-position: 100% 22%;
-      
-      @media only screen and (min-width: 1200px) and (max-width: 1259px) {
-        background-position: 100% 11%;
-      }
-    
-    }
 
     // mobile hamburger white.
     .su-multi-menu__nav-toggle {
@@ -76,9 +65,9 @@
       }
 
       &:active:before,
-      &[aria-expanded=false]:focus:before, 
+      &[aria-expanded=false]:focus:before,
       &[aria-expanded=false]:hover:before,
-      &[aria-expanded=true]:focus:before, 
+      &[aria-expanded=true]:focus:before,
       &[aria-expanded=true]:hover:before {
         background-color: $su-color-white;
       }
