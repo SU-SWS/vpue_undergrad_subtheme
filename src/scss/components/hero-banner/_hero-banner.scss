@@ -4,11 +4,15 @@
 
 .front {
 
-  // To have it look correct in admin view.
+  // Move the image up more to compensate for the admin interface.
   &.role--authenticated {
     .su-page-banner {
       .vpue-hero-banner--has-image {
         margin-top: -282px;
+
+        @media only screen and (min-width: 992px) and (max-width: 1457px) {
+          margin-top: -405px;
+        }
       }
     }
 
@@ -50,11 +54,11 @@
   .su-page-banner {
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -225px;
+      margin-top: -285px;
       width: 100vw;
 
-      @media only screen and (min-width: 992px) and (max-width: 1259px) {
-        margin-top: -285px;
+      @media only screen and (min-width: 992px) and (max-width: 1089px) {
+        margin-top: -350px;
       }
     }
 
@@ -62,7 +66,7 @@
       position: relative;
       justify-content: flex-end;
 
-      // Where we are setting the height of the hero block image
+      // Where we set the height of the hero block image
       @include grid-media-min('lg') {
         min-height: 800px;
       }
@@ -81,7 +85,7 @@
         display: block;
       }
 
-      //move the card below the image
+      // Move the card below the image
       @include grid-media-max('md') {
         position: relative;
       }
@@ -109,12 +113,12 @@
             color: $su-color-black;
             text-decoration: none;
 
-            // color change for on the image
+            // Color change for on the image
             @include grid-media-min('md') {
               color: $su-color-white;
             }
 
-            // color change for below the image
+            // Color change for below the image
             @include grid-media-max('md') {
               color: $su-color-black;
             }
@@ -148,7 +152,7 @@
         @include vpue-gradient--link-hover;
       }
 
-      // color change for below the image
+      // Color change for below the image
       @include grid-media-max('md') {
         color: $su-color-black;
       }
@@ -162,7 +166,7 @@
       max-width: 94vw;
       text-align: center;
 
-      // color change for below the image
+      // Color change for below the image
       @include grid-media-max('md') {
         color: $su-color-black;
         text-align: left;
@@ -174,7 +178,7 @@
       font-family: $su-font-sans;
       text-transform: uppercase;
 
-      // color change for below the image
+      // Color change for below the image
       @include grid-media-max('md') {
         color: $vpue-color-purple;
       }
