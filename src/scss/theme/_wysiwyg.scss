@@ -17,7 +17,7 @@
             counter-increment: big-red-list;
             border-left: 1px solid $su-color-bright-red;
             padding: 0 0 1em 1em;
-            margin-bottom: 2em;
+            margin-bottom: 3em;
 
             &::marker {
                 content: counter(big-red-list) ". ";
