@@ -3,7 +3,6 @@
 .su-wysiwyg-text {
 
     .big-red-list {
-        list-style: none;
         counter-reset: big-red-list;
 
         @include grid-media-max('lg') {
