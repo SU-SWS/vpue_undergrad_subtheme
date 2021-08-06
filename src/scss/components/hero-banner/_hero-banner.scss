@@ -13,6 +13,10 @@
         @media only screen and (min-width: 992px) and (max-width: 1457px) {
           margin-top: -405px;
         }
+
+        @include grid-media-min('xl') {
+          margin-top: -347px;
+        }
       }
     }
 
