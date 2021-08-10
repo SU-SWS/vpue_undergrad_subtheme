@@ -33,12 +33,12 @@
     .contact-line1 {
       font-size: 2.4rem;
       @include vpue-font--lora-base;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 1.5rem;
     }
 
     .contact-link {
-      font-weight: 700;
+      font-weight: 600;
       color: $vpue-color-off-white;
       text-decoration: none;
 
