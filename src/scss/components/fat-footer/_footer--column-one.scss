@@ -5,7 +5,7 @@
 .vpue-fat-footer {
 
   a.mailto svg {
-    fill: $su-color-white;
+    fill: $vpue-color-off-white;
   
     &:hover,
     &:focus {
@@ -33,13 +33,13 @@
     .contact-line1 {
       font-size: 2.4rem;
       @include vpue-font--lora-base;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 1.5rem;
     }
 
     .contact-link {
-      font-weight: 700;
-      color: $su-color-white;
+      font-weight: 600;
+      color: $vpue-color-off-white;
       text-decoration: none;
 
       &:hover,
@@ -49,7 +49,7 @@
       }
 
       &::after {
-        fill: $su-color-white;
+        fill: $vpue-color-off-white;
       }
   
       &:hover,
@@ -61,7 +61,7 @@
     }
 
     .contact-phone {
-      font-weight: normal;
+      font-weight: 300;
     }
   }
 

@@ -2,10 +2,10 @@
 
 .vpue-fat-footer {
   .vpue-fat-footer__map-link {
-    color: $su-color-white;
+    color: $vpue-color-off-white;
     text-decoration: none;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 600;
 
 
     &:hover,
@@ -15,7 +15,7 @@
     }
 
     &::after {
-      background-color: $su-color-white;
+      background-color: $vpue-color-off-white;
     }
 
     &:hover,
@@ -33,7 +33,7 @@
   // Social link styles
   .vpue-fat-footer__social-links {
     i::before {
-      color: $su-color-white;
+      color: $vpue-color-off-white;
     }
 
     span {
@@ -47,7 +47,7 @@
   // Action link styles
   .vpue-fat-footer__action-links {
     a {
-      color: $su-color-white;
+      color: $vpue-color-off-white;
       font-size: 1.8rem;
 
       &:hover,
@@ -66,8 +66,9 @@
     // all regular navigation links
     a {
       @include sans;
-      color: $su-color-white;
+      color: $vpue-color-off-white;
       text-decoration: none;
+      font-weight: 300;
 
       &:hover,
       &:focus {
@@ -84,6 +85,7 @@
   .vpue-fat-footer__list-heading {
     padding-bottom: 0;
     font-size: 2.4rem;
+    font-weight: 600;
     margin-bottom: 1.5rem;
   }
 }

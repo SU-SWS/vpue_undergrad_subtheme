@@ -3,8 +3,9 @@
 /* Footer Layout */
 .vpue-fat-footer {
 
-  color: $su-color-white;
+  color: $vpue-color-off-white;
   background: $vpue-gradient-black-to-purple;
+  font-weight: 300;
 
   .vpue-gradient-divider {
     height: 1rem;
@@ -21,35 +22,36 @@
 
     .su-lockup__cell1 {
       @include grid-media('md') {
-        border-right: 1px solid $su-color-white;
+        border-right: 1px solid $vpue-color-off-white;
       }
     }
 
     .su-lockup__cell2 {
       @include grid-media('md') {
-        border-left: 1px solid $su-color-white;
+        border-left: 1px solid $vpue-color-off-white;
       }
     }
 
     .vpue-fat-footer__lockup-wordmark {
-      color: $su-color-white;
+      color: $vpue-color-off-white;
     }
 
     .vpue-fat-footer__lockup-line1 {
-      color: $su-color-white;
+      color: $vpue-color-off-white;
       font-family: sans-serif;
 
       @include grid-media-max('sm') {
         &::after {
           @include margin(0.5rem null 0.5rem);
-          border-bottom: 1px solid $su-color-white;
+          border-bottom: 1px solid $vpue-color-off-white;
         }
       }
     }
 
     .vpue-fat-footer__lockup-line5 {
-      color: $su-color-white;
+      color: $vpue-color-off-white;
       font-size: 1.9rem;
+      font-weight: 400;
     }
     
     
