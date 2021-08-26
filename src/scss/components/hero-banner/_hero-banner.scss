@@ -87,6 +87,17 @@
       @include grid-media-max('md') {
         min-height: 450px;
       }
+
+      // Fix for accessbility per ODA request. Images are often turned off. Without the min-height everything
+      // collaspes up and is invisible.
+      .su-hero__media {
+        .image,
+        .media,
+        & > article,
+        & > div {
+          min-height: 350px;
+        }
+      }
     }
 
     .su-hero__media {
