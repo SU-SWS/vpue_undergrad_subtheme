@@ -25,6 +25,11 @@
     }
   }
 
+  .su-skipnav {
+    z-index: 16;
+    background-color: $su-color-white;
+  }
+
   // Moving the alert to the top when
   .su-alert {
     position: relative;
@@ -73,6 +78,10 @@
       // Where we set the height of the hero block image
       @include grid-media-min('lg') {
         min-height: 800px;
+
+        // Fix for accessbility per ODA request. Images are often turned off.
+        background-color: $su-color-black;
+        z-index: -1;
       }
 
       @include grid-media-max('md') {
