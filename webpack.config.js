@@ -136,8 +136,8 @@ var webpackConfig = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              publicPath: "../assets/img",
-              outputPath: "../assets/img"
+              publicPath: "../assets/png",
+              outputPath: "../assets/png"
             }
           }
         ]
