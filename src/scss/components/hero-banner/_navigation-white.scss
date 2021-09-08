@@ -74,9 +74,14 @@
     }
 
     &.su-multi-menu--dropdowns {
-      .su-multi-menu__menu {
+      .su-multi-menu__menu-lv1 {
         > .su-multi-menu__item--parent {
           > .su-nav-toggle {
+            &:focus,
+            &:hover {
+              border-top: 3px solid $su-color-white;
+            }
+
             &::before {
               background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
             }
