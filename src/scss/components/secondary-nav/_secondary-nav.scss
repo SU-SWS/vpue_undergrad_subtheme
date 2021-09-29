@@ -6,3 +6,25 @@
 
   }
 }
+
+// Global styles for secondary nav links.
+// ---------------------------------------------------------------------------
+.su-secondary-nav__link {
+  &:hover,
+  &:focus {
+    &::before {
+      background: $vpue-gradient-purple-to-red-vertical;
+    }
+  }
+}
+
+// Currently active item.
+// ---------------------------------------------------------------------------
+.su-secondary-nav__item--current {
+  > .su-secondary-nav__link {
+
+    &::before {
+      background: $vpue-gradient-purple-to-red-vertical;
+    }
+  }
+}
