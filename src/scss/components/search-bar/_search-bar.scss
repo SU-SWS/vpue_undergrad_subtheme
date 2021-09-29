@@ -13,8 +13,9 @@
 }
 
 .su-site-search__submit {
+  background: url(#{$images-dir}/png/icon-search--plum.png);
   // background: url(/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--plum.png) no-repeat 0 0;
-  background-image: url(/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--plum.png);
+  // background-image: url(/themes/custom/vpue_undergrad_subtheme/dist/assets/png/icon-search--plum.png);
   // background: url(../../../assets/png/icon-search--plum.png) no-repeat 0 0;
   // background-image: url(../../../assets/png/icon-search--plum.png) no-repeat 0 0;
   // background: url("{{ base_path ~ directory }}/dist/assets/png/icon-search--plum.png") no-repeat 0 0;
