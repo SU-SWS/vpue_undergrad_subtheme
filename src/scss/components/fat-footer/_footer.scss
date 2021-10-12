@@ -2,7 +2,6 @@
 
 /* Footer Layout */
 .vpue-fat-footer {
-
   color: $vpue-color-off-white;
   background: $vpue-gradient-black-to-purple;
   background-color: $su-color-black;
@@ -21,15 +20,53 @@
     width: 100%;
     @include modular-spacing('padding-bottom', 2);
 
+    .su-lockup,
+    .su-lockup > a {
+      @include flex-container;
+      align-items: stretch;
+      justify-content: flex-start;
+      vertical-align: bottom;
+    }
+
     .su-lockup__cell1 {
-      @include grid-media('md') {
-        border-right: 1px solid $vpue-color-off-white;
-      }
+      min-height: 26px;
+      vertical-align: bottom;
+      width: auto;
+      border-right: 1px solid $vpue-color-off-white;
+
+      @include margin(null -1px null null);
+      @include padding(null 7px 0 null);
+      align-self: flex-end;
+      display: flex;
+      flex-shrink: 1;
+      max-width: 160px;
+      min-height: 32px;
     }
 
     .su-lockup__cell2 {
+      @include padding(0 null null 7px);
+      align-self: flex-end;
+      flex-grow: 1;
+      vertical-align: bottom;
+      border-left: 1px solid $vpue-color-off-white;
+    }
+    
+    .su-lockup__wordmark-wrapper {
+      line-height: 29px;
+
       @include grid-media('md') {
-        border-left: 1px solid $vpue-color-off-white;
+        line-height: 32px;
+      }
+    }
+
+    .su-lockup__line5 {
+      font-size: 2.7rem;
+      line-height: 1em;
+      width: 100%;
+    
+      @include grid-media('sm') {
+        @include margin(8px null null null);
+        font-size: 3rem;
       }
     }
 
@@ -43,8 +80,7 @@
 
       @include grid-media-max('sm') {
         &::after {
-          @include margin(0.5rem null 0.5rem);
-          border-bottom: 1px solid $vpue-color-off-white;
+          display: none;
         }
       }
     }
@@ -54,12 +90,14 @@
       font-size: 1.9rem;
       font-weight: 400;
     }
-    
-    
   }
   
   .vpue-fat-footer__description {
     @include modular-spacing('padding-bottom', 2);
+
+    @include grid-media-max('sm') {
+      padding-right: 5rem;
+    }
   }
   
   .vpue-fat-footer__columns {
