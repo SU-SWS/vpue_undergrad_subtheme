@@ -86,6 +86,7 @@
             &:focus,
             &:hover {
               border-top: 3px solid $su-color-white;
+              border-bottom: none;
             }
 
             // Change the caret for only the large and up.
