@@ -103,23 +103,28 @@
 
 .su-multi-menu.su-multi-menu--dropdowns {
   .su-multi-menu__menu {
-    >.su-multi-menu__item--parent {
+    >.su-multi-menu__item--parent:first-of-type {
       .su-nav-toggle {
+
         @include grid-media-min('lg') {
           height: 18px;
         }
+      }
+    }
 
-        &:active,
-        &:focus {
-          border-width: 3px;
-        }
+    >.su-multi-menu__item--parent {
+      .su-nav-toggle {
 
-        &:hover,
-        &:active,
-        &:focus {
-          &[aria-expanded=false],
-          &[aria-expanded=true] {
-            border-width: 3px;
+        @include grid-media-min('lg') {
+          &:active,
+          &:focus,
+          &:hover,
+          &:active,
+          &:focus {
+            &[aria-expanded=false],
+            &[aria-expanded=true] {
+              border-width: 3px;
+            }
           }
         }
       }
