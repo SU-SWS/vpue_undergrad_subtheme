@@ -105,7 +105,9 @@
   .su-multi-menu__menu {
     >.su-multi-menu__item--parent {
       .su-nav-toggle {
-        height: 18px;
+        @include grid-media-min('lg') {
+          height: 18px;
+        }
 
         &:active,
         &:focus {
