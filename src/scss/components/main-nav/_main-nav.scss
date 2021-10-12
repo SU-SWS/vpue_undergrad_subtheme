@@ -100,25 +100,24 @@
 
 }
 
-// Removes the underline on the arrow down 
-:not(.front) {
-  .su-multi-menu.su-multi-menu--dropdowns {
-    .su-multi-menu__menu {
-      >.su-multi-menu__item--parent {
-        .su-nav-toggle {
 
-          &:active,
-          &:focus {
-            border: 0;
-          }
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      .su-nav-toggle {
+        height: 18px;
 
-          &:hover,
-          &:active,
-          &:focus {
-            &[aria-expanded=false],
-            &[aria-expanded=true] {
-              border: 0;
-            }
+        &:active,
+        &:focus {
+          border-width: 3px;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          &[aria-expanded=false],
+          &[aria-expanded=true] {
+            border-width: 3px;
           }
         }
       }
