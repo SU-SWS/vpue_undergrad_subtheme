@@ -106,6 +106,15 @@
             }
           }
         }
+
+        .su-multi-menu__link {
+          &:hover,
+          &:focus {
+            &::before {
+              background: $vpue-gradient-sea-to-light-sea-vertical;
+            }
+          }
+        }
       }
     }
 
@@ -135,7 +144,7 @@
             color: $su-color-white;
 
             &:before {
-              background: none;
+              background: none !important;
             }
 
           }

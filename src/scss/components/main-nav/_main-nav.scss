@@ -1,13 +1,9 @@
 @charset "UTF-8";
 
-@include grid-media-min('lg') {
-  .su-multi-menu .su-multi-menu__menu-lv1>.su-multi-menu__item.su-multi-menu__item--current>.su-multi-menu__link:before {
-    background: linear-gradient(90deg, #620059 0%, #640156 17.75%, #6A044B 32.65%, #750A3A 46.52%, #841122 59.69%, #8C1515 65.19%, #B83A4B 99.11%);
-  }
-}
+
 
 .su-masthead {
-
+  
   .su-lockup__logo-wrapper {
     display: grid;
     grid-template-columns: [col1-start] 100px  [col2-start] 240px;
@@ -75,6 +71,51 @@
       @include grid-media-max('sm') {
         width: 75%;
         margin-top: -15px;
+      }
+    }
+  }
+
+  .su-multi-menu {
+  
+    // All ul containers.
+    // -----------------------------------------------------------------------
+    .su-multi-menu__menu {
+  
+      // All link elements.
+      // -----------------------------------------------------------------------
+      .su-multi-menu__link {
+  
+        &:hover,
+        &:focus {
+          &::before {
+            background: $vpue-gradient-purple-to-red-vertical;
+          }
+        }
+      }
+  
+    }
+  
+    // First level styles
+    // -----------------------------------------------------------------------
+    .su-multi-menu__menu-lv1 {
+  
+      @include grid-media("lg") {
+  
+        // Top level list items.
+        // --------------------------
+        > .su-multi-menu__item {
+  
+          // First level current items.
+          &.su-multi-menu__item--current {
+            > .su-multi-menu__link {
+  
+              &::before {
+                background: $vpue-gradient-purple-to-red;
+              }
+  
+            }
+          }
+        }
       }
     }
   }
