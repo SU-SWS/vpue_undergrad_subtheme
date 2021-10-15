@@ -2,7 +2,7 @@
 
 // Special responsive table for VPUE.
 
-.resp_acc {    
+.resp_table { 
     width: 100%;
 
     thead {
@@ -83,7 +83,7 @@
 
 
 @include grid-media-max('md') {
-    .resp_acc {
+    .resp_table {
         .rowcat {
             padding: 8px 14px;
             text-align: left;
@@ -104,7 +104,7 @@
 }
 
 @include grid-media-max('sm') {
-    .resp_acc {
+    .resp_table {
         th {
             display: none;
         }
