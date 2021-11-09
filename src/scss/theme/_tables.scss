@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+// Special table for VPUE.
+.resp_table { 
+    width: 100%;
+
+    thead {
+        th,
+        tr {
+            vertical-align: top;
+        }
+
+        tr {
+            h1, h2, h3, h4 {
+                color: $vpue-color-med-black;
+            }
+
+            a {
+                color: $vpue-color-med-sea;
+
+                &:hover,
+                &:focus {
+                    color: $su-color-white;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr:nth-of-type(even) {
+            background: $su-color-foggy-light;
+        }
+    }
+
+    td,
+    th {
+        text-align: left;
+        vertical-align: top;
+
+        a {
+            font-weight: bold;
+            color: $su-color-digital-red;
+
+            &:hover,
+            &:focus {
+                color: $su-color-cardinal-red-dark;
+            }
+
+            &.su-link--external {
+                &:after {
+                    background-color: $su-color-cardinal-red-dark;
+                }
+            }
+            
+            &.mailto {
+                svg {
+                    fill: $su-color-cardinal-red-dark;
+                }
+            }
+            
+        }
+    }
+    
+    th {
+        @include type-e;
+
+        font-weight: $su-font-semi-bold;        
+        margin: 0;
+        max-width: 800px;
+        line-height: inherit;
+    }
+
+    td {
+        padding: 40px 30px;
+
+        ul,
+        p {
+            @include type-f;
+        }
+    }
+}
+
