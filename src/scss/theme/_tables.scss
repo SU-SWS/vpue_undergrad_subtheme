@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-// Special responsive table for VPUE.
-
+// Special table for VPUE.
 .resp_table { 
     width: 100%;
 
@@ -13,15 +12,15 @@
 
         tr {
             h1, h2, h3, h4 {
-                color: #151515;
+                color: $vpue-color-med-black;
             }
 
             a {
-                color: #0075b0;
+                color: $vpue-color-med-sea;
 
                 &:hover,
                 &:focus {
-                    color: #fff;
+                    color: $su-color-white;
                 }
             }
         }
@@ -29,7 +28,7 @@
 
     tbody {
         tr:nth-of-type(even) {
-            background: #f4f4f4;
+            background: $su-color-foggy-light;
         }
     }
 
@@ -40,22 +39,22 @@
 
         a {
             font-weight: bold;
-            color: #b1040e;
+            color: $su-color-digital-red;
 
             &:hover,
             &:focus {
-                color: #820000;
+                color: $su-color-cardinal-red-dark;
             }
 
             &.su-link--external {
                 &:after {
-                    background-color: #820000;
+                    background-color: $su-color-cardinal-red-dark;
                 }
             }
             
             &.mailto {
                 svg {
-                    fill: #820000;
+                    fill: $su-color-cardinal-red-dark;
                 }
             }
             
@@ -81,73 +80,3 @@
     }
 }
 
-
-@include grid-media-max('md') {
-    .resp_table {
-        .rowcat {
-            padding: 8px 14px;
-            text-align: left;
-            color: #b1040e;
-        }
-
-        tbody {
-            tr {
-                padding-top: 0;
-
-                &:nth-of-type(even) {
-                    background: none;
-                    padding-top: 0;
-                }
-            }
-        }
-    }     
-}
-
-@include grid-media-max('sm') {
-    .resp_table {
-        th {
-            display: none;
-        }
-        
-        tbody { 
-            tr {
-                display: block;
-            }
-        }
-
-        .rowcat {
-            padding: 8px 14px;
-            text-align: left;
-            color:#b1040e;
-
-            &::before {
-                position: absolute;
-                top: 8px;
-                left: 10px;
-                display: block;
-                content: attr(aria-label);
-                color:#b1040e;
-                text-transform: uppercase;
-            }
-        }
-
-        td {
-            position: relative;
-            display: block;
-            padding: 15px 30px 15px 50px;
-            
-            &::before {
-                position: absolute;
-                top: 8px;
-                left: 10px;
-                display: block;
-                content: attr(aria-label);
-            }
-        }
-        
-        .item {
-            background-color: #f3f3f3;
-        }
-    }
-}
-  

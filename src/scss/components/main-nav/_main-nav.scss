@@ -142,14 +142,6 @@
 
 .su-multi-menu.su-multi-menu--dropdowns {
   .su-multi-menu__menu {
-    >.su-multi-menu__item--parent:first-of-type {
-      .su-nav-toggle {
-
-        @include grid-media-min('lg') {
-          height: 18px;
-        }
-      }
-    }
 
     >.su-multi-menu__item--parent {
       .su-nav-toggle {
