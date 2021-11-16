@@ -63,11 +63,27 @@
   .su-page-banner {
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -285px;
+      margin-top: -286px;
       width: 100vw;
 
-      @media only screen and (min-width: 992px) and (max-width: 1089px) {
-        margin-top: -350px;
+      @include grid-media('sm') {
+        margin-top: -290px;
+      }
+
+      @include grid-media('md') {
+        margin-top: -220px;
+      }
+
+      @include grid-media('lg') {
+        margin-top: -376px;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 998px) {
+        margin-top: -439px;
+      }
+
+      @include grid-media('xl') {
+        margin-top: -290px;
       }
     }
 
@@ -101,12 +117,22 @@
     }
 
     .su-hero__media {
-      @include vpue--image-top-gradient;
+      @include vpue--image-top-gradient-new;
+
+      // changing the gradient for small and smaller screens
+      @include grid-media-max('sm') {
+        @include vpue--image-top-gradient-reversed;
+      }
 
       picture {
         position: relative;
         z-index: -1;
         display: block;
+
+        // removing the image for small and xs screens
+        @include grid-media-max('sm') {
+          display: none;
+        }
       }
 
       // Move the card below the image

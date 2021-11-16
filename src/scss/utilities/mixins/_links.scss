@@ -21,6 +21,14 @@
   background: linear-gradient(to bottom, black, transparent, black);
 }
 
+@mixin vpue--image-top-gradient-new {
+  background: linear-gradient(to bottom, black, transparent 50%);
+}
+
+@mixin vpue--image-top-gradient-reversed {
+  background: linear-gradient(to bottom, black, black, transparent);
+}
+
 @mixin vpue-gradient--nav {
   color: $su-color-white;
   text-decoration: none;
