@@ -65,6 +65,7 @@
       position: relative;
       margin-top: -286px;
       width: 100vw;
+      z-index: 1; //To allow access to click link.
 
       @include grid-media('sm') {
         margin-top: -290px;
@@ -131,7 +132,9 @@
 
         // removing the image for small and xs screens
         @include grid-media-max('sm') {
-          display: none;
+          display: block;
+          position: absolute;
+          z-index: 1;
         }
       }
 
@@ -154,6 +157,13 @@
             color: $su-color-black;
             text-align: left;
           }
+
+          &::after {
+            background-color: $su-color-white;
+            height: 0.4em;
+            width: 0.4em;
+          }
+
 
           &:hover,
           &:focus,
@@ -187,7 +197,8 @@
       }
     }
 
-    a {
+    a,
+    p {
       @include grid-media-min('lg') {
         @include modular-typography(2);
       }
