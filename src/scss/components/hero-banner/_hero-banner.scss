@@ -6,12 +6,22 @@
 
   // Move the image up more to compensate for the admin interface.
   &.role--authenticated {
+
+    //drupal messages to the top 
+    .page-content {
+      > .su-alert {
+        position: relative;
+        top: -286px;
+        z-index: 15;
+      }
+    }
+
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -282px;
+        margin-top: -300px;
 
         @media only screen and (min-width: 992px) and (max-width: 1457px) {
-          margin-top: -405px;
+          margin-top: -495px;
         }
 
         @include grid-media-min('xl') {
@@ -30,12 +40,13 @@
     background-color: $su-color-white;
   }
 
-  // Moving the alert to the top when
-  .su-alert {
-    position: relative;
-    top: -225px;
-    z-index: 15;
-  }
+  // Moving the site's global message alert to the top when
+  .ds-entity--stanford-global-message {
+    .su-alert {
+      position: relative;
+      z-index: 15;
+    }
+}
 
   // Remove the red brand bar
   .su-brand-bar {
@@ -197,8 +208,17 @@
       }
     }
 
-    a,
     p {
+      @include grid-media-min('lg') {
+        @include modular-typography(2);
+      }
+
+      color: $su-color-white;
+      font-weight: $su-font-bold;
+      text-decoration: none;
+    }
+
+    a {
       @include grid-media-min('lg') {
         @include modular-typography(2);
       }
