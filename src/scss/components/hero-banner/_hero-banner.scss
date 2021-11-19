@@ -6,12 +6,22 @@
 
   // Move the image up more to compensate for the admin interface.
   &.role--authenticated {
+
+    //drupal messages to the top 
+    .page-content {
+      > .su-alert {
+        position: relative;
+        top: -286px;
+        z-index: 15;
+      }
+    }
+
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -282px;
+        margin-top: -300px;
 
         @media only screen and (min-width: 992px) and (max-width: 1457px) {
-          margin-top: -405px;
+          margin-top: -495px;
         }
 
         @include grid-media-min('xl') {
@@ -30,12 +40,13 @@
     background-color: $su-color-white;
   }
 
-  // Moving the alert to the top when
-  .su-alert {
-    position: relative;
-    top: -225px;
-    z-index: 15;
-  }
+  // Moving the site's global message alert to the top when
+  .ds-entity--stanford-global-message {
+    .su-alert {
+      position: relative;
+      z-index: 15;
+    }
+}
 
   // Remove the red brand bar
   .su-brand-bar {
@@ -63,11 +74,28 @@
   .su-page-banner {
     .vpue-hero-banner--has-image {
       position: relative;
-      margin-top: -285px;
+      margin-top: -286px;
       width: 100vw;
+      z-index: 1; //To allow access to click link.
 
-      @media only screen and (min-width: 992px) and (max-width: 1089px) {
-        margin-top: -350px;
+      @include grid-media('sm') {
+        margin-top: -290px;
+      }
+
+      @include grid-media('md') {
+        margin-top: -220px;
+      }
+
+      @include grid-media('lg') {
+        margin-top: -376px;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 998px) {
+        margin-top: -439px;
+      }
+
+      @include grid-media('xl') {
+        margin-top: -290px;
       }
     }
 
@@ -101,12 +129,24 @@
     }
 
     .su-hero__media {
-      @include vpue--image-top-gradient;
+      @include vpue--image-top-gradient-new;
+
+      // changing the gradient for small and smaller screens
+      @include grid-media-max('sm') {
+        @include vpue--image-top-gradient-reversed;
+      }
 
       picture {
         position: relative;
         z-index: -1;
         display: block;
+
+        // removing the image for small and xs screens
+        @include grid-media-max('sm') {
+          display: block;
+          position: absolute;
+          z-index: 1;
+        }
       }
 
       // Move the card below the image
@@ -128,6 +168,13 @@
             color: $su-color-black;
             text-align: left;
           }
+
+          &::after {
+            background-color: $su-color-white;
+            height: 0.4em;
+            width: 0.4em;
+          }
+
 
           &:hover,
           &:focus,
@@ -159,6 +206,16 @@
           background-position: 0 70%;
         }
       }
+    }
+
+    p {
+      @include grid-media-min('lg') {
+        @include modular-typography(2);
+      }
+
+      color: $su-color-white;
+      font-weight: $su-font-bold;
+      text-decoration: none;
     }
 
     a {
