@@ -66,9 +66,7 @@
       {%- block block_card_body %}
         {# An open field for body content #}
           <p>
-            <a href="{{ card_link }}" {{ card_cta_attributes }}>
             {{ card_body|render_clean('<em><strong>') }}
-            </a>
           </p>
       {% endblock -%}
 
