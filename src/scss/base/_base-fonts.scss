@@ -6,10 +6,7 @@ html {
 }
 
 // overriding fonts from Stanford Basic
-.su-link--internal,
-[type="image"],
-[type="reset"],
-[type="submit"] {
+.su-link--internal {
   @include vpue-font--lora-base;
 }
 
