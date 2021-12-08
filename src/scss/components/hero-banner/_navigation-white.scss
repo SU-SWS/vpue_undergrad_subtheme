@@ -2,151 +2,153 @@
 
 .front {
 
-  .su-masthead {
-    .su-lockup__logo-wrapper {
-      .vpue-lockup__su,
-      .vpue-lockup__vpue {
+  @include grid-media-min('lg') {
+    .su-masthead {
+      .su-lockup__logo-wrapper {
+        .vpue-lockup__su,
+        .vpue-lockup__vpue {
+          color: $su-color-white;
+        }
+
+        .su,
+        .vpue {
+          fill: currentColor;
+        }
+      }
+    }
+
+
+    .su-masthead {
+      .su-lockup__line1,
+      .su-lockup__line2,
+      .su-lockup__line3,
+      .su-lockup__line4,
+      .su-lockup__line5 {
         color: $su-color-white;
       }
 
-      .su,
-      .vpue {
-        fill: currentColor;
+      .su-lockup--option-none {
+        .su-lockup__cell1,
+        .su-lockup__cell2 {
+          border-right: none;
+        }
       }
-    }
-  }
 
+      .su-lockup__cell1 {
+        border-right: 1px solid $su-color-white;
 
-  .su-masthead {
-    .su-lockup__line1,
-    .su-lockup__line2,
-    .su-lockup__line3,
-    .su-lockup__line4,
-    .su-lockup__line5 {
-      color: $su-color-white;
-    }
+        @include grid-media-max('md') {
+          border-right: none;
+        }
+      }
 
-    .su-lockup--option-none {
-      .su-lockup__cell1,
       .su-lockup__cell2 {
-        border-right: none;
+        border-left: 1px solid $su-color-white;
+
+        @include grid-media-max('md') {
+          border-left: none;
+        }
       }
     }
 
-    .su-lockup__cell1 {
-      border-right: 1px solid $su-color-white;
+    .su-multi-menu {
 
-      @include grid-media-max('md') {
-        border-right: none;
-      }
-    }
+      // mobile hamburger white.
+      .su-multi-menu__nav-toggle {
+        color: $su-color-white;
 
-    .su-lockup__cell2 {
-      border-left: 1px solid $su-color-white;
+        &:after {
+          background: url("#{$su-image-path}/hamburger-white.svg") no-repeat 3px 0;
+        }
 
-      @include grid-media-max('md') {
-        border-left: none;
-      }
-    }
-  }
+        &[aria-expanded=true]:after {
+          background: url("#{$su-image-path}/close-white.svg") no-repeat 3px 0;
+        }
 
-  .su-multi-menu {
-
-    // mobile hamburger white.
-    .su-multi-menu__nav-toggle {
-      color: $su-color-white;
-
-      &:after {
-        background: url("#{$su-image-path}/hamburger-white.svg") no-repeat 3px 0;
+        &:active:before,
+        &[aria-expanded=false]:focus:before,
+        &[aria-expanded=false]:hover:before,
+        &[aria-expanded=true]:focus:before,
+        &[aria-expanded=true]:hover:before {
+          background-color: $su-color-white;
+        }
       }
 
-      &[aria-expanded=true]:after {
-        background: url("#{$su-image-path}/close-white.svg") no-repeat 3px 0;
-      }
-
-      &:active:before,
-      &[aria-expanded=false]:focus:before,
-      &[aria-expanded=false]:hover:before,
-      &[aria-expanded=true]:focus:before,
-      &[aria-expanded=true]:hover:before {
-        background-color: $su-color-white;
-      }
-    }
-
-    &.su-multi-menu--dropdowns {
-      .su-multi-menu__menu-lv1 {
-        > .su-multi-menu__item--parent {
-          > .su-multi-menu__link {
-            &::after {
-              border-right-color: $su-color-white;
-            }
-          }
-
-          > .su-nav-toggle {
-            @include grid-media-min('lg') {
-              &:focus,
-              &:hover {
-                border-top: 3px solid $su-color-white;
-                border-bottom: none;
+      &.su-multi-menu--dropdowns {
+        .su-multi-menu__menu-lv1 {
+          > .su-multi-menu__item--parent {
+            > .su-multi-menu__link {
+              &::after {
+                border-right-color: $su-color-white;
               }
             }
 
-            // Change the caret for only the large and up.
-            @include grid-media-min('lg') {
-              &::before {
-                background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+            > .su-nav-toggle {
+              @include grid-media-min('lg') {
+                &:focus,
+                &:hover {
+                  border-top: 3px solid $su-color-white;
+                  border-bottom: none;
+                }
               }
 
-              &:focus,
-              &:hover {
+              // Change the caret for only the large and up.
+              @include grid-media-min('lg') {
                 &::before {
                   background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+                }
+
+                &:focus,
+                &:hover {
+                  &::before {
+                    background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+                  }
                 }
               }
             }
           }
-        }
 
-        .su-multi-menu__link {
-          &:hover,
-          &:focus {
-            &::before {
-              background: $vpue-gradient-sea-to-light-sea-vertical;
+          .su-multi-menu__link {
+            &:hover,
+            &:focus {
+              &::before {
+                background: $vpue-gradient-sea-to-light-sea-vertical;
+              }
             }
           }
         }
       }
-    }
 
-    .su-multi-menu__menu-lv1 {
-      > .su-multi-menu__item {
+      .su-multi-menu__menu-lv1 {
+        > .su-multi-menu__item {
 
-        > .su-multi-menu__link {
-          @include modular-typography(1);
-          color: $su-color-white;
-
-          @include grid-media-min('lg') {
-            &:hover,
-            &:focus,
-            &:active {
-              @include vpue-gradient--nav;
-              color: $su-color-white;
-            }
-          }
-        }
-
-        &.su-multi-menu__item--current {
           > .su-multi-menu__link {
-            @include grid-media-min('lg') {
-              @include vpue-gradient--nav;
-            }
-
+            @include modular-typography(1);
             color: $su-color-white;
 
-            &:before {
-              background: none !important;
+            @include grid-media-min('lg') {
+              &:hover,
+              &:focus,
+              &:active {
+                @include vpue-gradient--nav;
+                color: $su-color-white;
+              }
             }
+          }
 
+          &.su-multi-menu__item--current {
+            > .su-multi-menu__link {
+              @include grid-media-min('lg') {
+                @include vpue-gradient--nav;
+              }
+
+              color: $su-color-white;
+
+              &:before {
+                background: none !important;
+              }
+
+            }
           }
         }
       }
