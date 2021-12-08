@@ -3,43 +3,10 @@
 // This Hero banner is only for the front page of site on VPUE subtheme
 
 .front {
-
-  // Move the image up more to compensate for the admin interface.
-  @include grid-media-min('lg') {
-    &.role--authenticated {
-
-    //drupal messages to the top 
-      .page-content {
-        > .su-alert {
-          position: relative;
-          top: -286px;
-          z-index: 15;
-        }
-      }
-
-      .su-page-banner {
-        .vpue-hero-banner--has-image {
-          margin-top: -300px;
-
-          @media only screen and (min-width: 992px) and (max-width: 1457px) {
-            margin-top: -495px;
-          }
-
-          @include grid-media-min('xl') {
-            margin-top: -347px;
-          }
-        }
-      }
-
-      .block--local-tasks {
-        z-index: 10;
-      }
-    }
-  }
-
-  .su-skipnav {
-    z-index: 16;
-    background-color: $su-color-white;
+  
+  // Remove the red brand bar
+  .su-brand-bar {
+    display: none;
   }
 
   // Moving the site's global message alert to the top when
@@ -48,41 +15,74 @@
       position: relative;
       z-index: 15;
     }
-}
-
-  // Remove the red brand bar
-  .su-brand-bar {
-    display: none;
   }
 
-  .su-masthead {
-    .su-site-search__input {
-      background: transparent;
-      border: 1px solid $su-color-white;
-      color: $su-color-white;
-      font-family: $su-font-sans;
+  // Move the image up more to compensate for the admin interface.
+  &.role--authenticated {
 
-      &::placeholder {
-        color: $su-color-white;
+  //drupal messages to the top 
+    .page-content {
+      > .su-alert {
+        position: relative;
+        top: -290px;
+        z-index: 15;
       }
     }
-  }
 
-  header {
-    background: transparent;
-    box-shadow: none;
-  }
+    .su-page-banner {
+      .vpue-hero-banner--has-image {
+        margin-top: -300px;
 
-  .su-hero__media {
-    // Move the card below the image
-    @include grid-media-max('md') {
-      position: relative;
+        @media only screen and (min-width: 992px) and (max-width: 1457px) {
+          margin-top: -495px;
+        }
+
+        @include grid-media-min('xl') {
+          margin-top: -347px;
+        }
+      }
+    }
+
+    .block--local-tasks {
+      z-index: 10;
     }
   }
+  
 
-  // LG and down only
-  // For sizes less than large.
-  .su-page-banner {
+  .node-stanford-page-su-page-banner > div {
+    .su-skipnav {
+      z-index: 16;
+      background-color: $su-color-white;
+    }
+
+    .su-masthead {
+      .su-site-search__input {
+        background: transparent;
+        border: 1px solid $su-color-white;
+        color: $su-color-white;
+        font-family: $su-font-sans;
+
+        &::placeholder {
+          color: $su-color-white;
+        }
+      }
+    }
+
+    header {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .su-hero__media {
+      // Move the card below the image
+      @include grid-media-max('md') {
+        position: relative;
+      }
+    }
+
+    // LG and down only
+    // For sizes less than large.
+    
     .vpue-hero-banner--has-image {
       .su-card__contents {
         > h2 {
@@ -99,7 +99,9 @@
             }
 
             &::after {
-              background-color: $su-color-black;
+              @include grid-media-max('md') {
+                background-color: $su-color-black;
+              }
               height: 0.4em;
               width: 0.4em;
             }
@@ -176,7 +178,7 @@
         text-align: center;
 
         // Color change for below the image
-        @include grid-media-max('md') {
+        @include grid-media-max('lg') {
           color: $su-color-black;
           text-align: left;
         }
@@ -195,11 +197,11 @@
         }
       }
     }
-  }
+    
 
-  // LG and up only
-  @include grid-media-min('lg') {
-    .su-page-banner {
+    // LG and up only
+    @include grid-media-min('lg') {
+      
       .vpue-hero-banner--has-image {
         position: relative;
         margin-top: -286px;

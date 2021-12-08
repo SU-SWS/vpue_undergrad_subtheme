@@ -4,6 +4,9 @@
 
   @include grid-media-min('lg') {
     .su-masthead {
+      background-color: transparent;
+      box-shadow: none;
+
       .su-lockup__logo-wrapper {
         .vpue-lockup__su,
         .vpue-lockup__vpue {
