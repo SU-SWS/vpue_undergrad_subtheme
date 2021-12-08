@@ -36,17 +36,25 @@
     .su-lockup__cell1 {
       border-right: 1px solid $su-color-white;
 
-      @include grid-media-max('md') {
+      @media (max-width: 1063px) {
         border-right: none;
       }
+
+      // @include grid-media-max('md') {
+      //   border-right: none;
+      // }
     }
 
     .su-lockup__cell2 {
       border-left: 1px solid $su-color-white;
 
-      @include grid-media-max('md') {
+      @media (max-width: 1063px) {
         border-left: none;
       }
+
+      // @include grid-media-max('md') {
+      //   border-left: none;
+      // }
     }
   }
 

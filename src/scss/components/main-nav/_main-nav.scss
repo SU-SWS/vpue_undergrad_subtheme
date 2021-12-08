@@ -129,13 +129,27 @@
 
   .su-lockup__cell1 {
     max-width: 300px;
-  }
 
-  @include grid-media-min('lg') {
-    .su-lockup__cell2 {
-      margin-bottom: 17px;
+    @media (max-width: 1063px) {
+      border-right: none;
     }
   }
+
+  .su-lockup__cell2 {
+    @include grid-media-min('lg') {
+      margin-bottom: 17px;
+    }
+    
+    @media (max-width: 1063px) {
+      border-left: none;
+    }
+  }
+
+  // @include grid-media-min('lg') {
+  //   .su-lockup__cell2 {
+  //     margin-bottom: 17px;
+  //   }
+  // }
 
 }
 
