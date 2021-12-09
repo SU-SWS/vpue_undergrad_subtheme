@@ -17,6 +17,26 @@
     }
   }
 
+  //skip nav look
+  .su-skipnav {
+    z-index: 16;
+    background-color: $su-color-white;
+  }
+
+  //search
+  .su-masthead {
+    .su-site-search__input {
+      background: transparent;
+      border: 1px solid $su-color-white;
+      color: $su-color-white;
+      font-family: $su-font-sans;
+
+      &::placeholder {
+        color: $su-color-white;
+      }
+    }
+  }
+
   // Move the image up more to compensate for the admin interface.
   &.role--authenticated {
 
@@ -50,23 +70,6 @@
   
 
   .node-stanford-page-su-page-banner > div {
-    .su-skipnav {
-      z-index: 16;
-      background-color: $su-color-white;
-    }
-
-    .su-masthead {
-      .su-site-search__input {
-        background: transparent;
-        border: 1px solid $su-color-white;
-        color: $su-color-white;
-        font-family: $su-font-sans;
-
-        &::placeholder {
-          color: $su-color-white;
-        }
-      }
-    }
 
     header {
       background: transparent;
