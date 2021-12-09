@@ -42,6 +42,17 @@
         color: #fff;
         opacity: 1;
       }
+      &:-internal-autofill-selected {
+        + .su-site-search__submit {
+          background: url("../../assets/png/icon-search--plum.png") no-repeat 0 0;
+          opacity: 0.7;
+          width: 18px;
+          height: 18px;
+          background-size: 18px;
+          top: 1.3rem;
+        }
+      }
+
     }
   }
 }
