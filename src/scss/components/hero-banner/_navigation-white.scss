@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 .front {
+  
+  .su-lockup__cell2 {
+    border-left: none;
+  }
 
   @include grid-media-min('lg') {
     .su-masthead {
@@ -45,9 +49,6 @@
         }
       }
 
-      .su-lockup__cell2 {
-        border-left: none;
-      }
     }
 
     .su-multi-menu {
