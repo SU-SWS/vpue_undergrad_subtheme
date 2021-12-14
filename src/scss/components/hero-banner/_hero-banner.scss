@@ -3,41 +3,10 @@
 // This Hero banner is only for the front page of site on VPUE subtheme
 
 .front {
-
-  // Move the image up more to compensate for the admin interface.
-  &.role--authenticated {
-
-    //drupal messages to the top 
-    .page-content {
-      > .su-alert {
-        position: relative;
-        top: -286px;
-        z-index: 15;
-      }
-    }
-
-    .su-page-banner {
-      .vpue-hero-banner--has-image {
-        margin-top: -300px;
-
-        @media only screen and (min-width: 992px) and (max-width: 1457px) {
-          margin-top: -495px;
-        }
-
-        @include grid-media-min('xl') {
-          margin-top: -347px;
-        }
-      }
-    }
-
-    .block--local-tasks {
-      z-index: 10;
-    }
-  }
-
-  .su-skipnav {
-    z-index: 16;
-    background-color: $su-color-white;
+  
+  // Remove the red brand bar
+  .su-brand-bar {
+    display: none;
   }
 
   // Moving the site's global message alert to the top when
@@ -46,13 +15,15 @@
       position: relative;
       z-index: 15;
     }
-}
-
-  // Remove the red brand bar
-  .su-brand-bar {
-    display: none;
   }
 
+  //skip nav look
+  .su-skipnav {
+    z-index: 16;
+    background-color: $su-color-white;
+  }
+
+  //search
   .su-masthead {
     .su-site-search__input {
       background: transparent;
@@ -66,203 +37,298 @@
     }
   }
 
-  header {
-    background: transparent;
-    box-shadow: none;
-  }
+  // Move the image up more to compensate for the admin interface.
+  &.role--authenticated {
 
-  .su-page-banner {
-    .vpue-hero-banner--has-image {
-      position: relative;
-      margin-top: -286px;
-      width: 100vw;
-      z-index: 1; //To allow access to click link.
-
-      @include grid-media('sm') {
-        margin-top: -290px;
-      }
-
-      @include grid-media('md') {
-        margin-top: -220px;
-      }
-
-      @include grid-media('lg') {
-        margin-top: -376px;
-      }
-
-      @media only screen and (min-width: 992px) and (max-width: 998px) {
-        margin-top: -439px;
-      }
-
-      @include grid-media('xl') {
-        margin-top: -290px;
+  //drupal messages to the top 
+    .page-content {
+      > .su-alert {
+        position: relative;
+        top: -290px;
+        z-index: 15;
       }
     }
 
-    .su-hero {
-      position: relative;
-      justify-content: flex-end;
+    .su-page-banner {
+      .vpue-hero-banner--has-image {
+        margin-top: -10px;
 
-      // Where we set the height of the hero block image
-      @include grid-media-min('lg') {
-        min-height: 800px;
+        @media only screen and (min-width: 992px) and (max-width: 1457px) {
+          margin-top: -537px;
+        }
 
-        // Fix for accessbility per ODA request. Images are often turned off.
-        background-color: $su-color-black;
-        z-index: -1;
-      }
-
-      @include grid-media-max('md') {
-        min-height: 450px;
-      }
-
-      // Fix for accessbility per ODA request. Images are often turned off. Without the min-height everything
-      // collaspes up and is invisible.
-      .su-hero__media {
-        .image,
-        .media,
-        & > article,
-        & > div {
-          min-height: 350px;
+        @include grid-media('xl') {
+          margin-top: -408px;
         }
       }
+    }
+  }
+  
+
+  .node-stanford-page-su-page-banner > div {
+
+    header {
+      background: transparent;
+      box-shadow: none;
     }
 
     .su-hero__media {
-      @include vpue--image-top-gradient-new;
-
-      // changing the gradient for small and smaller screens
-      @include grid-media-max('sm') {
-        @include vpue--image-top-gradient-reversed;
-      }
-
-      picture {
-        position: relative;
-        z-index: -1;
-        display: block;
-
-        // removing the image for small and xs screens
-        @include grid-media-max('sm') {
-          display: block;
-          position: absolute;
-          z-index: 1;
-        }
-      }
-
       // Move the card below the image
       @include grid-media-max('md') {
         position: relative;
       }
     }
 
-    .su-card__contents {
-      > h2 {
-        @include grid-media-min('md') {
-          @include modular-typography(4);
+    // LG and down only
+    // For sizes less than large.
+    .vpue-hero-banner--has-image {
+      .su-card__contents {
+        > h2 {
+          padding-bottom: 10px;
+
+          @include grid-media-min('md') {
+            @include modular-typography(3);
+          }
+
+          > a {
+            @include vpue-gradient--link;
+
+            @include grid-media-max('md') {
+              color: $su-color-black;
+              text-align: left;
+            }
+
+            &::after {
+              @include grid-media-max('md') {
+                background-color: $su-color-black;
+              }
+              height: 0.4em;
+              width: 0.4em;
+            }
+
+
+            &:hover,
+            &:focus,
+            &:visited {
+              @include vpue-gradient--link-hover;
+
+              color: $su-color-black;
+              text-decoration: none;
+
+              // Color change for on the image
+              @include grid-media-min('md') {
+                color: $su-color-white;
+              }
+
+              // Color change for below the image
+              @include grid-media-max('md') {
+                color: $su-color-black;
+              }
+            }
+          }
         }
 
         > a {
-          @include vpue-gradient--link;
-
-          @include grid-media-max('md') {
-            color: $su-color-black;
-            text-align: left;
-          }
-
-          &::after {
-            background-color: $su-color-white;
-            height: 0.4em;
-            width: 0.4em;
-          }
-
+          background-position: 0 70%;
 
           &:hover,
           &:focus,
           &:visited {
-            @include vpue-gradient--link-hover;
-
-            color: $su-color-black;
-            text-decoration: none;
-
-            // Color change for on the image
-            @include grid-media-min('md') {
-              color: $su-color-white;
-            }
-
-            // Color change for below the image
-            @include grid-media-max('md') {
-              color: $su-color-black;
-            }
+            background-position: 0 70%;
           }
         }
       }
 
-      > a {
-        background-position: 0 70%;
+      p {
+        @include grid-media-min('lg') {
+          @include modular-typography(2);
+        }
+
+        font-weight: $su-font-bold;
+        text-decoration: none;
+      }
+
+      a {
+        @include grid-media-min('lg') {
+          @include modular-typography(2);
+        }
+
+        color: $su-color-white;
+        font-weight: $su-font-bold;
+        text-decoration: none;
 
         &:hover,
         &:focus,
-        &:visited {
-          background-position: 0 70%;
+        &:active {
+          @include vpue-gradient--link-hover;
+        }
+
+        // Color change for below the image
+        @include grid-media-max('md') {
+          color: $su-color-black;
+        }
+      }
+
+      .su-hero__card {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        color: $su-color-white;
+        max-width: 94vw;
+        text-align: center;
+
+        // Color change for below the image
+        @include grid-media-max('lg') {
+          color: $su-color-black;
+          text-align: left;
+        }
+      }
+
+      span {
+        @include type-d;
+
+        color: $su-color-white;
+        font-family: $su-font-sans;
+        text-transform: uppercase;
+
+        // Color change for below the image
+        @include grid-media-max('md') {
+          color: $su-color-cardinal-red;
         }
       }
     }
+    
 
-    p {
-      @include grid-media-min('lg') {
+    // LG and up only
+    @include grid-media-min('lg') {
+      
+      .vpue-hero-banner--has-image {
+        position: relative;
+        margin-top: -420px;
+        width: 100vw;
+        z-index: 1; //To allow access to click link.
+      }
+
+      .su-hero {
+        position: relative;
+        justify-content: flex-end;
+
+        // Where we set the height of the hero block image
+        min-height: 800px;
+
+        // Fix for accessbility per ODA request. Images are often turned off.
+        background-color: $su-color-black;
+        z-index: -1;
+        
+
+        // Fix for accessbility per ODA request. Images are often turned off. Without the min-height everything
+        // collaspes up and is invisible.
+        .su-hero__media {
+          .image,
+          .media,
+          & > article,
+          & > div {
+            min-height: 350px;
+          }
+        }
+      }
+
+      .su-hero__media {
+        @include vpue--image-top-gradient-new;
+
+        picture {
+          position: relative;
+          z-index: -1;
+          display: block;
+        }
+      }
+
+      .su-card__contents {
+        > h2 {
+        
+          > a {
+            @include vpue-gradient--link;
+
+            &::after {
+              background-color: $su-color-white;
+              height: 0.4em;
+              width: 0.4em;
+            }
+
+
+            &:hover,
+            &:focus,
+            &:visited {
+              @include vpue-gradient--link-hover;
+
+              color: $su-color-black;
+              text-decoration: none;
+            }
+          }
+        }
+
+        > a {
+          background-position: 0 70%;
+
+          &:hover,
+          &:focus,
+          &:visited {
+            background-position: 0 70%;
+          }
+        }
+      }
+
+      p {
         @include modular-typography(2);
+        
+        color: $su-color-white;
+        font-weight: $su-font-bold;
+        text-decoration: none;
       }
 
-      color: $su-color-white;
-      font-weight: $su-font-bold;
-      text-decoration: none;
-    }
-
-    a {
-      @include grid-media-min('lg') {
+      a {
         @include modular-typography(2);
+        
+        color: $su-color-white;
+        font-weight: $su-font-bold;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          @include vpue-gradient--link-hover;
+        }
       }
 
-      color: $su-color-white;
-      font-weight: $su-font-bold;
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        @include vpue-gradient--link-hover;
+      .su-hero__card {
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        color: $su-color-white;
+        max-width: 94vw;
+        text-align: center;
       }
 
-      // Color change for below the image
-      @include grid-media-max('md') {
-        color: $su-color-black;
-      }
-    }
-
-    .su-hero__card {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      color: $su-color-white;
-      max-width: 94vw;
-      text-align: center;
-
-      // Color change for below the image
-      @include grid-media-max('md') {
-        color: $su-color-black;
-        text-align: left;
+      span {
+        color: $su-color-white;
+        font-family: $su-font-sans;
+        text-transform: uppercase;
       }
     }
 
-    span {
-      color: $su-color-white;
-      font-family: $su-font-sans;
-      text-transform: uppercase;
+    @include grid-media-min('xl') {
 
-      // Color change for below the image
-      @include grid-media-max('md') {
-        color: $su-color-cardinal-red;
+      .vpue-hero-banner--has-image {
+        margin-top: -350px;
+      }
+    }
+
+    @include grid-media-min('2xl') {
+
+      .vpue-hero-banner--has-image {
+        margin-top: -290px;
       }
     }
   }
+
 }
