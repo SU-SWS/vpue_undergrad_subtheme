@@ -51,10 +51,10 @@
 
     .su-page-banner {
       .vpue-hero-banner--has-image {
-        margin-top: -300px;
+        margin-top: -10px;
 
         @media only screen and (min-width: 992px) and (max-width: 1457px) {
-          margin-top: -495px;
+          margin-top: -537px;
         }
 
         @include grid-media('xl') {

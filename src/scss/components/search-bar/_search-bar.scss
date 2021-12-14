@@ -36,21 +36,12 @@
       opacity: 1;
       background-size: 20px;
     }
-    
-    .su-site-search__input {
-      &::placeholder {
-        color: #fff;
-        opacity: 1;
-      }
-
-    }
   }
 }
 
 .su-masthead {
   .su-site-search__input {
     &::placeholder {
-      color: #fff;
       opacity: 1;
     }
     &:-internal-autofill-selected {
