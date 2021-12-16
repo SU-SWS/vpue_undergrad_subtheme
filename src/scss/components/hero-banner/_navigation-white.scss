@@ -132,6 +132,10 @@
               &:active {
                 @include vpue-gradient--nav;
                 color: $su-color-white;
+
+                &::before {
+                  background: transparent !important;
+                }
               }
             }
           }
