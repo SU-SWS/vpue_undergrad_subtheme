@@ -112,7 +112,7 @@
             &:hover,
             &:focus {
               &::before {
-                background: transparent !important;
+                background: $vpue-gradient-sea-to-light-sea-vertical;
               }
             }
           }
@@ -128,19 +128,28 @@
 
             @include grid-media-min('lg') {
               &:hover,
+              &:focus,
               &:active {
                 @include vpue-gradient--nav;
                 color: $su-color-white;
+
+                &::before {
+                  background: transparent !important;
+                }
               }
             }
           }
 
           &.su-multi-menu__item--current {
             > .su-multi-menu__link {
+              @include grid-media-min('lg') {
+                @include vpue-gradient--nav;
+              }
+
               color: $su-color-white;
 
               &:before {
-                background: transparent !important;
+                background: none !important;
               }
 
             }
