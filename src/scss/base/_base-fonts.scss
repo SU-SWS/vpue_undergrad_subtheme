@@ -6,10 +6,7 @@ html {
 }
 
 // overriding fonts from Stanford Basic
-.su-link--internal,
-[type="image"],
-[type="reset"],
-[type="submit"] {
+.su-link--internal {
   @include vpue-font--lora-base;
 }
 
@@ -19,11 +16,13 @@ body {
   color: $su-color-black;
 }
 
-// Do NOT override the fonts in the global footer, local footer, fat footer and lockup
+// Do NOT override the fonts in the global footer, local footer, fat footer, lockup, and global message
 .su-global-footer,
 .su-local-footer,
 .vpue-fat-footer,
-.su-lockup {
+.su-lockup,
+.su-alert,
+.su-alert__heading {
   @include sans;
 }
 

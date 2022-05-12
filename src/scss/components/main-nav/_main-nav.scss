@@ -131,8 +131,10 @@
     max-width: 300px;
   }
 
-  @include grid-media-min('lg') {
-    .su-lockup__cell2 {
+  .su-lockup__cell2 {
+    border-left: none;
+
+    @include grid-media-min('lg') {
       margin-bottom: 17px;
     }
   }
