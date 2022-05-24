@@ -79,7 +79,7 @@
           > .su-multi-menu__item--parent {
             > .su-multi-menu__link {
               &::after {
-                border-right-color: $su-color-white;
+                border-right-color: transparent;
               }
             }
 
