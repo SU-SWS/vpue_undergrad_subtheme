@@ -141,7 +141,6 @@
 
 }
 
-
 .su-multi-menu.su-multi-menu--dropdowns {
   .su-multi-menu__menu {
 
@@ -159,6 +158,12 @@
               border-width: 3px;
             }
           }
+        }
+      }
+
+      >.su-multi-menu__link {
+        &::after {
+          border-right: transparent;
         }
       }
     }
