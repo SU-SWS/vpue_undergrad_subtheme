@@ -3,7 +3,7 @@
 // This Hero banner is only for the front page of site on VPUE subtheme
 
 .front {
-  
+
   // Remove the red brand bar
   .su-brand-bar {
     display: none;
@@ -40,7 +40,7 @@
   // Move the image up more to compensate for the admin interface.
   &.role--authenticated {
 
-  //drupal messages to the top 
+  //drupal messages to the top
     .page-content {
       > .su-alert {
         position: relative;
@@ -70,7 +70,7 @@
       }
     }
   }
-  
+
 
   .node-stanford-page-su-page-banner > div {
 
@@ -89,7 +89,16 @@
     // LG and down only
     // For sizes less than large.
     .vpue-hero-banner--has-image {
+
+      // overridding
+      .su-card {
+        .su-card__contents {
+          font-family: $su-font-sans;
+        }
+      }
+
       .su-card__contents {
+
         > h2 {
           padding-bottom: 10px;
 
@@ -99,6 +108,7 @@
 
           > a {
             @include vpue-gradient--link;
+            font-family: $su-font-sans;
 
             @include grid-media-max('md') {
               color: $su-color-black;
@@ -148,10 +158,10 @@
 
       p {
         @include grid-media-min('lg') {
-          @include modular-typography(2);
+          font-size: 1.4em;
         }
 
-        font-weight: $su-font-bold;
+        font-weight: 500;
         text-decoration: none;
       }
 
@@ -204,11 +214,10 @@
         }
       }
     }
-    
 
     // LG and up only
     @include grid-media-min('lg') {
-      
+
       .vpue-hero-banner--has-image {
         position: relative;
         margin-top: -420px;
@@ -226,7 +235,7 @@
         // Fix for accessbility per ODA request. Images are often turned off.
         background-color: $su-color-black;
         z-index: -1;
-        
+
 
         // Fix for accessbility per ODA request. Images are often turned off. Without the min-height everything
         // collaspes up and is invisible.
@@ -252,7 +261,7 @@
 
       .su-card__contents {
         > h2 {
-        
+
           > a {
             @include vpue-gradient--link;
 
@@ -287,7 +296,7 @@
 
       p {
         @include modular-typography(2);
-        
+
         color: $su-color-white;
         font-weight: $su-font-bold;
         text-decoration: none;
@@ -295,7 +304,7 @@
 
       a {
         @include modular-typography(2);
-        
+
         color: $su-color-white;
         font-weight: $su-font-bold;
         text-decoration: none;
