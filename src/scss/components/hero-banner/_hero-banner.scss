@@ -100,9 +100,19 @@
       .su-card__contents {
 
         > h2 {
+          font-weight: $su-font-bold;
+          font-family: $su-font-sans;
           padding-bottom: 10px;
+          text-decoration: none;
 
-          @include grid-media-min('md') {
+          @include modular-typography(5);
+
+          @include grid-media-min('lg') {
+            color: $su-color-white;
+
+          }
+
+          @include grid-media-max('md') {
             @include modular-typography(3);
           }
 
@@ -166,10 +176,6 @@
       }
 
       a {
-        @include grid-media-min('lg') {
-          @include modular-typography(2);
-        }
-
         color: $su-color-white;
         font-weight: $su-font-bold;
         text-decoration: none;
@@ -197,6 +203,7 @@
         // Color change for below the image
         @include grid-media-max('lg') {
           color: $su-color-black;
+          font-size: .8em;
           text-align: left;
         }
       }
@@ -303,8 +310,6 @@
       }
 
       a {
-        @include modular-typography(2);
-
         color: $su-color-white;
         font-weight: $su-font-bold;
         text-decoration: none;

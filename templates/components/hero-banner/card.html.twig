@@ -56,9 +56,13 @@
       {%- block block_card_headline  %}
         {%- if card_headline is not empty %}
           <h2>
+          {%- if card_link is not empty %}
             <a href="{{ card_link }}" {{ card_cta_attributes }}>
-              {{- card_headline -}}
+          {% endif -%}
+          {{- card_headline -}}
+          {%- if card_link is not empty %}
             </a>
+          {% endif -%}
           </h2>
         {% endif -%}
       {% endblock -%}
