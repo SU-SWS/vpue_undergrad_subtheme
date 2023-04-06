@@ -66,25 +66,6 @@
 # loaded on all pages. Consider implimenting your scripts through theme libraries if you wish to
 # avoid this. https://www.drupal.org/developing/api/8/assets
 #
-#   js/build/scripts.js: {}
-# dependencies:
-#   - core/drupal
-#   - core/jquery
-#
-# patternlibrary:
-#   version: VERSION
-#   css:
-#     base:
-#       css/pattern-library/base/base.css: {}
-#     layout:
-#       css/pattern-library/layout/layout.css: {}
-#     component:
-#       css/pattern-library/components/components.css: {}
-#     state:
-#       css/pattern-library/states/states.css: {}
-#     theme:
-#       css/pattern-library/theme/theme.css: {}
-#       css/pattern-library/theme/print.css: { media: print }
 
 allpages:
   version: VERSION
