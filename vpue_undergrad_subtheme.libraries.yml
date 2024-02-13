@@ -91,8 +91,6 @@ allpages:
   css:
    theme:
      dist/css/vpue-undergrad.css: {minified: true }
-  js:
-    dist/js/scripts.js: { scope: footer }
 
 fonts:
   css:
