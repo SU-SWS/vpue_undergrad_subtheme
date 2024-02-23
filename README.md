@@ -1,5 +1,5 @@
 # [VPUE Undergrad](https://github.com/SU-SWS/vpue_undergrad_subtheme)
-##### Version: 1.0.2
+##### Version: 1.0.3
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
@@ -10,8 +10,8 @@ VPUE Undergrad is a Stanford Undergrad sub-theme that works with the Stanford Ba
 
 Documentation
 ---
-See subtheming guides and best practices here: 
-https://devguide.sites.stanford.edu/front-end/drupal/sub-themes 
+See subtheming guides and best practices here:
+https://devguide.sites.stanford.edu/front-end/drupal/sub-themes
 
 Sites
 ---
