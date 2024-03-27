@@ -100,20 +100,25 @@
       .su-card__contents {
 
         > h2 {
+          @include modular-typography(5);
+
+          @include grid-media-max('md') {
+            @include modular-typography(3);
+          }
+        }
+
+        > h2,
+        > h3,
+        > h4,
+        > .su-font-splash {
           font-weight: $su-font-bold;
           font-family: $su-font-sans;
           padding-bottom: 10px;
           text-decoration: none;
 
-          @include modular-typography(5);
-
           @include grid-media-min('lg') {
             color: $su-color-white;
 
-          }
-
-          @include grid-media-max('md') {
-            @include modular-typography(3);
           }
 
           > a {
@@ -267,7 +272,10 @@
       }
 
       .su-card__contents {
-        > h2 {
+        > h2,
+        > h3,
+        > h4,
+        > .su-font-splash {
 
           > a {
             @include vpue-gradient--link;
