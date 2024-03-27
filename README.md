@@ -1,5 +1,5 @@
 # [VPUE Undergrad](https://github.com/SU-SWS/vpue_undergrad_subtheme)
-##### Version: 1.0.3
+##### Version: 1.0.4
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
