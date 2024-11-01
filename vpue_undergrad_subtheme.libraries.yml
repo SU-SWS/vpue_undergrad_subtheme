@@ -40,51 +40,6 @@
 # font properties, etc. Ideally, these should be separated enough from a
 # component’s structure to be “swappable”, and omitting these entirely should
 # not break the component’s functionality or basic usability.
-#
-# EXAMPLE:
-#
-# nameoflibrarygroup:
-#   version: VERSION
-#   css:
-#     base:
-#       css/drupal/all.css:
-#       css/drupal/print.css: { media: print }
-#     layout:
-#       css/layout/all.css: {}
-#     component:
-#       css/components/components.css: {}
-#     state:
-#       css/state/states.css: {}
-#     theme:
-#       css/pattern-library/all.css: {}
-#   js:
-#     js/build/scripts.js: {}
-#   dependencies:
-#     - core/jquery
-#
-# Uncomment the code below to load scripts.js file on all pages. This file also requires JQuery to be
-# loaded on all pages. Consider implimenting your scripts through theme libraries if you wish to
-# avoid this. https://www.drupal.org/developing/api/8/assets
-#
-#   js/build/scripts.js: {}
-# dependencies:
-#   - core/drupal
-#   - core/jquery
-#
-# patternlibrary:
-#   version: VERSION
-#   css:
-#     base:
-#       css/pattern-library/base/base.css: {}
-#     layout:
-#       css/pattern-library/layout/layout.css: {}
-#     component:
-#       css/pattern-library/components/components.css: {}
-#     state:
-#       css/pattern-library/states/states.css: {}
-#     theme:
-#       css/pattern-library/theme/theme.css: {}
-#       css/pattern-library/theme/print.css: { media: print }
 
 allpages:
   css:
