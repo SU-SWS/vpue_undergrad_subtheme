@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// Utility Link on Hero banner
+
+.front {
+  .config_pages--view-mode--site-settings-header {
+    a {
+      font-weight: 600;
+      color: $vpue-color-off-white;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: $vpue-color-orange;
+      }
+
+      &::after {
+        fill: $vpue-color-off-white;
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          background-color: $vpue-color-orange;
+        }
+      }
+
+      &.su-button {
+        &:hover,
+        &:focus {
+          color: $vpue-color-off-white;
+        }
+      }
+    }
+  }
+}
+
