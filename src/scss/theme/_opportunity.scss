@@ -4,6 +4,12 @@
 
 .opportunity {
   .main-region {
+    @include sans;
+
+    h2 {
+    @include sans;
+    }
+
     .su-opp-course-code {
       font-size: 1.75em;
     }
