@@ -2,10 +2,17 @@
 
 // Utility Link on Hero banner
 
+.config_pages--view-mode--site-settings-header {
+  a {
+    font-family: $su-font-sans;
+    font-weight: 500;
+  }
+}
+
+// Homepage changes.
 .front {
   .config_pages--view-mode--site-settings-header {
     a {
-      font-weight: 600;
       color: $vpue-color-off-white;
       text-decoration: none;
 
@@ -30,9 +37,11 @@
         &:hover,
         &:focus {
           color: $vpue-color-off-white;
+          background-color: $su-color-bright-red;
         }
       }
     }
   }
 }
+
 
