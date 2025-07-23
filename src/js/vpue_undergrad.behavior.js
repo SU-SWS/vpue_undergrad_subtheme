@@ -7,7 +7,7 @@
       const $utiltyBtn = $('.su-site-header-button', context);
       if ($utiltyBtn.length) {
         const $clonedutiltyBtn = $utiltyBtn.clone();
-        $clonedutiltyBtn.appendTo('.su-brand-bar', context)
+        $clonedutiltyBtn.prependTo('.su-masthead', context)
           .wrap('<div class="su-mobile-utility-button"></div>');
       }
 
