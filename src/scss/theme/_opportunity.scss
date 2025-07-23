@@ -10,12 +10,11 @@
     }
   }
 
-  .su-news-list__topics {
-    font-family: sans-serif;
-  }
-
-  .su-news-article .su-news-list__topics {
-    padding-bottom: 5px;
-    font-size: 17px;
+  .su-news-article {
+    .su-news-list__topics {
+      font-family: sans-serif;
+      padding-bottom: 5px;
+      font-size: 17px;
+    }
   }
 }
