@@ -9,22 +9,32 @@
       color: #620059;
       opacity: 0.7;
     }
+
+    @include grid-media-max('md') {
+      background: transparent;
+      border: 2px solid $su-color-bright-red;
+      color: $su-color-white;
+      font-family: $su-font-sans;
+
+      &::placeholder {
+        color: $su-color-white;
+      }
+    }
   }
-}
 
-.su-site-search__submit {
-  background: url("../../assets/png/icon-search--plum.png") no-repeat 0 0;
-  opacity: 0.5;
-  width: 20px;
-  height: 20px;
-  background-size: 20px;
-  top: 1.3rem;
-}
-
-.su-masthead {
   .su-site-search__submit {
+    background: url("../../assets/png/icon-search--plum.png") no-repeat 0 0;
     opacity: 0.5;
+    width: 20px;
+    height: 20px;
     background-size: 20px;
+    top: 1.3rem;
+
+    @include grid-media-max('md') {
+      background: url("../../assets/png/icon-search--white.png") no-repeat 0 0;
+      opacity: 1;
+      background-size: 20px;
+    }
   }
 }
 
