@@ -10,10 +10,6 @@
         $clonedutiltyBtn.prependTo('.su-masthead', context)
           .wrap('<div class="su-mobile-utility-button"></div>');
       }
-
-
-
-
     }
   };
 

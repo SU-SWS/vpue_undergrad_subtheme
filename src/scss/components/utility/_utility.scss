@@ -44,4 +44,35 @@
   }
 }
 
+// Utility button placement
+// Homepage.
+.front {
+  .su-mobile-utility-button {
+    .su-site-header-button {
+      right: 20px;
+      top: 30px;
 
+      @include grid-media-max('md') {
+        right: 50px;
+      }
+      @include grid-media-max('sm') {
+        right: 35px;
+      }
+    }
+  }
+}
+
+// All other pages
+.su-mobile-utility-button {
+  .su-site-header-button {
+    right: 20px;
+    top: 50px;
+
+    @include grid-media-max('md') {
+      right: 50px;
+    }
+    @include grid-media-max('sm') {
+      right: 35px;
+    }
+  }
+}
