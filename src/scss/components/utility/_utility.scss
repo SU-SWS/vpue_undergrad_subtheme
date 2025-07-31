@@ -6,6 +6,15 @@
   a {
     font-family: $su-font-sans;
     font-weight: 500;
+
+    &.su-button {
+      &:hover,
+      &:focus {
+        color: $su-color-white;
+        background: $vpue-gradient-sea-to-light-sea-utility;
+        background-color: transparent;
+      }
+    }
   }
 }
 
@@ -13,13 +22,13 @@
 .front {
   .config_pages--view-mode--site-settings-header {
     a {
-      color: $vpue-color-off-white;
+      color: $su-color-white;
       text-decoration: none;
 
       &:hover,
       &:focus {
         text-decoration: underline;
-        color: $vpue-color-orange;
+        color: $vpue-color-light-sea-utility;
       }
 
       &::after {
@@ -29,16 +38,27 @@
       &:hover,
       &:focus {
         &::after {
-          background-color: $vpue-color-orange;
+          background-color: $vpue-color-light-sea-utility;
         }
       }
 
       &.su-button {
         &:hover,
         &:focus {
-          color: $vpue-color-off-white;
-          background-color: $su-color-bright-red;
+          color: $su-color-white;
         }
+      }
+    }
+  }
+}
+
+.su-mobile-utility-button {
+  a {
+    &.su-button {
+      &:hover,
+      &:focus {
+        color: $su-color-white;
+        background: $vpue-gradient-sea-to-light-sea-utility
       }
     }
   }
