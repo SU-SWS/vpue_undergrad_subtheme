@@ -8,11 +8,12 @@
     font-weight: 500;
 
     &.su-button {
+      background: $vpue-gradient-sea-to-light-sea-utility;
+
       &:hover,
       &:focus {
         color: $su-color-white;
-        background: $vpue-gradient-sea-to-light-sea-utility;
-        background-color: transparent;
+        background: $su-color-bright-red;
       }
     }
   }
@@ -55,10 +56,12 @@
 .su-mobile-utility-button {
   a {
     &.su-button {
+      background: $vpue-gradient-sea-to-light-sea-utility;
+
       &:hover,
       &:focus {
         color: $su-color-white;
-        background: $vpue-gradient-sea-to-light-sea-utility
+        background: $su-color-bright-red;
       }
     }
   }
