@@ -2,11 +2,27 @@
 
 // Utility Link on Hero banner
 
+// Utility button.
 .config_pages--view-mode--site-settings-header {
   a {
     font-family: $su-font-sans;
     font-weight: 500;
 
+    &.su-button {
+      background: $vpue-gradient-sea-to-light-sea-utility;
+
+      &:hover,
+      &:focus {
+        color: $su-color-white;
+        background: $su-color-bright-red;
+      }
+    }
+  }
+}
+
+// Utility button overrides needed.
+.su-mobile-utility-button {
+  a {
     &.su-button {
       background: $vpue-gradient-sea-to-light-sea-utility;
 
@@ -53,34 +69,12 @@
   }
 }
 
-.su-mobile-utility-button {
-  a {
-    &.su-button {
-      background: $vpue-gradient-sea-to-light-sea-utility;
-
-      &:hover,
-      &:focus {
-        color: $su-color-white;
-        background: $su-color-bright-red;
-      }
-    }
-  }
-}
-
 // Utility button placement
 // Homepage.
 .front {
   .su-mobile-utility-button {
     .su-site-header-button {
-      right: 20px;
       top: 30px;
-
-      @include grid-media-max('md') {
-        right: 50px;
-      }
-      @include grid-media-max('sm') {
-        right: 35px;
-      }
     }
   }
 }
@@ -95,7 +89,7 @@
       right: 50px;
     }
     @include grid-media-max('sm') {
-      right: 35px;
+      right: 25px;
     }
   }
 }
