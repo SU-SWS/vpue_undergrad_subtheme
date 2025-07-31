@@ -1,41 +1,35 @@
 @charset "UTF-8";
 
-// override default Opportunity CT styles here and add additional button classes as needed.
+// Override default Opportunity CT styles here
 
 .opportunity {
   .main-region {
     @include sans;
 
     h2 {
-    @include sans;
+      @include sans;
     }
 
     .su-opp-course-code {
       font-size: 1.6em;
     }
-
-  // overrides
-    .stanford-opportunities-type-units .type-units {
-      border-bottom: none;
-      }
-  }
-  .jumpstart-ui--two-column>.left-region+.main-region>div:first-child {
-    border-top: none;
-  }
-  .su-opp-deadline-time.su-opp-application-deadline {
-    border-bottom: none;
-  }
-  .su-tags-wrapper {
-    border-bottom: none;
-  }
-  .node-stanford-opportunity-su-opp-contact-email h2,
-  .node-stanford-opportunity-su-opp-units h2,
-  .stanford-opportunities-contact h2,
-  .su-opp-application-deadline h2 {
-    padding-top: 0;
-  }
-  .su-tags-wrapper {
-    padding: 0;
   }
 }
 
+// Card Display
+.ds-entity--stanford-opportunity,
+.stanford-opportunities-filtered {
+  .su-card {
+    .su-card__superhead {
+      font-family: sans-serif;
+    }
+  }
+
+  .su-news-article {
+    .su-news-list__topics {
+      font-family: sans-serif;
+      padding-bottom: 5px;
+      font-size: 17px;
+    }
+  }
+}

@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-const autoprefixer = require('autoprefixer')({ grid: true });
 
 const config = {
   isProd: process.env.NODE_ENV === "production",
@@ -35,6 +34,14 @@ var webpackConfig = {
   module: {
     rules: [
       {
+        test: /\.behavior.js$/,
+        exclude: /node_modules/,
+        options: {
+          enableHmr: false
+        },
+        loader: 'drupal-behaviors-loader'
+      },
+      {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
         use: {
@@ -49,15 +56,7 @@ var webpackConfig = {
         use: [
           config.isProd ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
           {loader:'css-loader', options: {}},
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                sourceMap: true,
-                plugins: [autoprefixer],
-              },
-            }
-          },
+          {loader:'postcss-loader', options: {}},
           {loader:'sass-loader', options: {}}
         ]
       },
