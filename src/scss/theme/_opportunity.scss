@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+// override default button styles here and add additional button classes as needed.
+
+.ds-entity--stanford-opportunity,
+.stanford-opportunities-filtered {
+  .su-card {
+    .su-card__superhead {
+      font-family: sans-serif;
+    }
+  }
+
+  .su-news-article {
+    .su-news-list__topics {
+      font-family: sans-serif;
+      padding-bottom: 5px;
+      font-size: 17px;
+    }
+  }
+}
