@@ -44,7 +44,12 @@
 allpages:
   css:
    theme:
-     dist/css/vpue-undergrad.css: {minified: true }
+     dist/css/vpue-undergrad.css: {}
+
+  js:
+    src/js/vpue_undergrad.behavior.js: {}
+  dependencies:
+    - core/jquery
 
 fonts:
   css:

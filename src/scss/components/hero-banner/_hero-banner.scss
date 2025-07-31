@@ -27,9 +27,13 @@
   .su-masthead {
     .su-site-search__input {
       background: transparent;
-      border: 1px solid $su-color-white;
+      border: 2px solid $su-color-white;
       color: $su-color-white;
       font-family: $su-font-sans;
+
+      @include grid-media-max('md') {
+        border: 2px solid $su-color-bright-red;
+      }
 
       &::placeholder {
         color: $su-color-white;
