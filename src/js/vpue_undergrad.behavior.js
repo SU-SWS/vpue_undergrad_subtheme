@@ -1,6 +1,6 @@
 (function ($, once) {
   'use strict';
-  Drupal.behaviors.ppoIrsrSubtheme = {
+  Drupal.behaviors.vpueSubtheme = {
     attach: function (context) {
 
     // Move the utility button to the brand bar for mobile users

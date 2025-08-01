@@ -364,4 +364,10 @@
     }
   }
 
+  // Override for the homepage's image hero banner only.
+  @include grid-media-min('md') {
+    .su-masthead>section:last-of-type {
+      padding-top: 1.9rem;
+    }
+  }
 }
