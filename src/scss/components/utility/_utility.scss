@@ -7,20 +7,11 @@
   a {
     font-family: $su-font-sans;
     font-weight: 500;
-
-    &.su-button {
-      background: $vpue-gradient-sea-to-light-sea-utility;
-
-      &:hover,
-      &:focus {
-        color: $su-color-white;
-        background: $su-color-bright-red;
-      }
-    }
   }
 }
 
 // Utility button overrides needed.
+.config_pages--view-mode--site-settings-header,
 .su-mobile-utility-button {
   a {
     &.su-button {
@@ -93,3 +84,4 @@
     }
   }
 }
+
