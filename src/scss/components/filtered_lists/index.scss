@@ -3,7 +3,7 @@
 .ptype-stanford-filtered-lists {
   .grid-container-3 {
      @include grid-media('lg') {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
