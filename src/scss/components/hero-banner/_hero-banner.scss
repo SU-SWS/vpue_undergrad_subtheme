@@ -94,6 +94,10 @@
     // For sizes less than large.
     .vpue-hero-banner--has-image {
 
+      .su-card__superhead {
+        display: none;
+      }
+
       // overridding
       .su-card {
         .su-card__contents {
