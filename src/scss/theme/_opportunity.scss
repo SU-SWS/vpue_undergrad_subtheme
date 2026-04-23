@@ -1,7 +1,22 @@
 @charset "UTF-8";
 
-// override default button styles here and add additional button classes as needed.
+// Override default Opportunity CT styles here
 
+.opportunity {
+  .main-region {
+    @include sans;
+
+    h2 {
+      @include sans;
+    }
+
+    .su-opp-course-code {
+      font-size: 1.6em;
+    }
+  }
+}
+
+// Card Display
 .ds-entity--stanford-opportunity,
 .stanford-opportunities-filtered {
   .su-card {
