@@ -6,14 +6,18 @@
 {%- extends "@stanford_basic/page.html.twig" -%}
 
 {# Change the brand bar #}
-{%- set template_brand_bar = "@vpue_undergrad_subtheme/components/brand-bar/vpue--brand-bar.html.twig" %}
+{%- block block_brandbar -%}
+  {%- include "@vpue_undergrad_subtheme/components/brand-bar/vpue--brand-bar.html.twig" -%}
+{%- endblock -%}
+
 {# Override the footer #}
 {%- block block_footer -%}
   <footer id="footer">
     {{ page.footer }}
 
     {%- include "@vpue_undergrad_subtheme/components/fat-footer/vpue-fat-footer.html.twig" -%}
-    {%- include "@decanter/components/global-footer/global-footer.twig" -%}
+
+    {{ include("jumpstart_ui:global_footer", {}, with_context = false) }}
 
   </footer>
 {%- endblock -%}
