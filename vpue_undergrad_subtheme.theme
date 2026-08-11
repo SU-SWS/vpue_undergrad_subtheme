@@ -50,15 +50,21 @@ function vpue_undergrad_subtheme_theme_suggestions_alter(array &$suggestions, ar
  * Implements hook_preprocess_HOOK().
  */
 function vpue_undergrad_subtheme_preprocess_paragraph__stanford_banner(&$variables) {
+  $paragraph = $variables['paragraph'];
+
   // If banner has an image, add a class
-  if (isset($variables['content']['#fields']['hero_image']['su_banner_image']['#object'])) {
+  if ($paragraph->get('su_banner_image')->count()) {
     $variables['attributes']['class'][] = 'vpue-hero-banner--has-image';
 
     // Banners use 'full_responsive' mode already. This is a placeholder to use this line once a responsive 1:1 ratio style exists in our d8core
     // $variables['content']['#fields']['hero_image']['su_banner_image'][0]['#stanford_media_image_style'] = 'full_responsive';
 
     // Check if there is a card
-    if (isset($variables['content']['#fields']['hero_super_headline']['su_banner_sup_header']['#object']) || isset($variables['content']['#fields']['hero_headline']['su_banner_header']['#object']) || isset($variables['content']['#fields']['hero_body']['su_banner_body']['#object'])) {
+    if (
+      $paragraph->get('su_banner_sup_header')->count()||
+      $paragraph->get('su_banner_header')->count()||
+      $paragraph->get('su_banner_body')->count()
+    ) {
       $variables['attributes']['class'][] = 'vpue-hero-banner--has-card';
     }
     else {
