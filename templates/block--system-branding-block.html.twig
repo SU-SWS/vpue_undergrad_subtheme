@@ -1,58 +1,123 @@
 {#
 /**
  * @file
- * Available variables:
+ * VPUE override of the system branding block.
  *
- * site_logo: Logo for site as defined in Appearance or theme settings.
- * site_name: Name for site as defined in Site information settings.
- * site_slogan: Slogan for site as defined in Site information settings
- * content: Containts the above vars with more information.
- * lockup: Settings from the theme.
- * use_logo: Setting from the theme
- * configuration: More settings from the theme.
- * - id: "system_branding_block"
- * - label: "Site Branding"
- * - use_site_logo: boolean
- * - use_site_name: boolean
- * - use_site_slogan: boolean
+ * Stanford Basic now renders the lockup through the jumpstart_ui
+ * Single Directory Component. Custom lockup blocks must therefore be
+ * defined inside the embed.
  */
 #}
 
-{# Set some of the default options for the lockup. #}
+{# Configure the lockup using the same logic as Stanford Basic. #}
+{% set link = url('<front>') %}
 
-{# If the theme has a custom logo. Use that. We can do this by overriding the twig block in lockup.twig #}
-{% block cell1 %}
+{% if lockup %}
+  {% set line3 = lockup.line3 %}
+  {% set line4 = lockup.line4 %}
+  {% set line5 = lockup.line5 %}
+{% endif %}
 
-  <div class="su-lockup__logo-wrapper">
-    <img class="vpue-lockup__custom-logo" src="/{{ base_path ~ directory }}/src/assets/svg/vpue-logo.svg" alt="Stanford VPUE Logo" role="img"/>
-    <div class="vpue-lockup__su">
-      <svg class="su" aria-hidden="true">
-        <use xlink:href="/{{ base_path ~ directory }}/src/assets/svg/Stanford_Cardinal.svg#Layer_1">
-          <title>Stanford</title>
-        </use>
-      </svg>
+{# Most lockup variants use the configured site name as line 1. #}
+{% if lockup.option != 'o'
+  and lockup.option != 's'
+  and lockup.option != 't'
+%}
+  {% set line1 = content.site_name %}
+{% endif %}
+
+{% if lockup.line1 %}
+  {% set line1 = lockup.line1 %}
+{% endif %}
+
+{# Use the site slogan unless the lockup configuration overrides it. #}
+{% set line2 = site_slogan %}
+
+{% if lockup.line2 %}
+  {% set line2 = lockup.line2 %}
+{% endif %}
+
+{# The "none" option suppresses all configurable lockup lines. #}
+{% if lockup.option == 'none' %}
+  {% set line1 = '' %}
+  {% set line2 = '' %}
+  {% set line3 = '' %}
+  {% set line4 = '' %}
+  {% set line5 = '' %}
+{% endif %}
+
+{#
+  `base_path` normally includes the leading slash. Do not add another
+  slash before this expression, or the URL could begin with `//`.
+#}
+{% set vpue_asset_path = base_path ~ directory ~ '/src/assets/svg' %}
+
+{% embed 'jumpstart_ui:lockup' with {
+  lockup_style: lockup.option,
+  line1: line1,
+  line2: line2,
+  line3: line3,
+  line4: line4,
+  line5: line5,
+  link: link,
+  vpue_asset_path: vpue_asset_path
+} %}
+
+  {#
+    This block is now in the scope that matters: the embedded
+    jumpstart_ui:lockup component.
+  #}
+  {% block cell1 %}
+    <div class="su-lockup__logo-wrapper">
+      <img
+        class="vpue-lockup__custom-logo"
+        src="{{ vpue_asset_path }}/vpue-logo.svg"
+        alt="Stanford VPUE"
+      />
+
+      <div class="vpue-lockup__su">
+        <svg class="su" aria-hidden="true" focusable="false">
+          <use href="{{ vpue_asset_path }}/Stanford_Cardinal.svg#Layer_1"></use>
+        </svg>
+      </div>
+
+      <div class="vpue-lockup__vpue">
+        <svg class="vpue" aria-hidden="true" focusable="false">
+          <use href="{{ vpue_asset_path }}/Undergrad_Black.svg#Layer_1"></use>
+        </svg>
+      </div>
+
+      {% if line4 %}
+        <span class="su-lockup__line4">{{ line4 }}</span>
+      {% endif %}
     </div>
-    <div class="vpue-lockup__vpue">
-      <svg class="vpue" aria-hidden="true">
-        <use xlink:href="/{{ base_path ~ directory }}/src/assets/svg/Undergrad_Black.svg#Layer_1">
-          <title>Undergrad</title>
-        </use>
-      </svg>
+
+    <div class="su-lockup__wordmark-wrapper">
+      {% if line4 %}
+        <span class="su-lockup__line4">{{ line4 }}</span>
+      {% endif %}
     </div>
+  {% endblock %}
 
-    {% if line4 is not empty %}
-      <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
+  {# Retain Stanford Basic's handling of the remaining lockup lines. #}
+  {% block cell2 %}
+    {% if lockup.option != 'none' %}
+      {% if line1 or line2 or line3 %}
+        <div class="su-lockup__cell2">
+          {% if line1 %}
+            <span class="su-lockup__line1">{{ line1 }}</span>
+          {% endif %}
+
+          {% if line2 %}
+            <span class="su-lockup__line2">{{ line2 }}</span>
+          {% endif %}
+
+          {% if line3 %}
+            <span class="su-lockup__line3">{{ line3 }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
     {% endif %}
-  </div>
+  {% endblock %}
 
-  <div class="su-lockup__wordmark-wrapper">
-    {% if line4 is not empty %}
-      <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
-    {% endif %}
-  </div>
-
-{% endblock %}
-
-
-
-{% extends "@stanford_basic/block/block--system-branding-block.html.twig" %}
+{% endembed %}
